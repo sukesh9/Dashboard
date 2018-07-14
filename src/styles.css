@@ -66,6 +66,11 @@ body {
     text-transform: uppercase;
   }
 
+  .sidebar-logo{
+    border-bottom: none;
+    width: 316px;
+  }
+
   .nav-item {
     height: 60px;
   }
@@ -81,13 +86,16 @@ body {
   /*
    * Navbar
    */
+   .bd-bottom{
+     border-bottom: 1px solid rgba(0,0,0,.0625);
+   }
   
   .navbar-brand {
     padding-top: .75rem;
     padding-bottom: .75rem;
     font-size: 1rem;
-    background-color: rgba(0, 0, 0, .25);
-    box-shadow: inset -1px 0 0 rgba(0, 0, 0, .25);
+    background-color: white;
+    box-shadow: inset -1px 0 0 rgba(0,0,0,.0625);
   }
   
   .navbar .form-control {
@@ -113,3 +121,7 @@ body {
   
   .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
+
+[role="main"] {
+    padding-top: 65px;
+}
