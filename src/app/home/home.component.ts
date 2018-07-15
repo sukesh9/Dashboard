@@ -15,19 +15,11 @@ export class HomeComponent implements OnInit {
   restaurantOpenClose: boolean;
   delivery: boolean;
 
-  id1 = 'chart1';
-
-  id2 = 'chart2';
-  // width = 600;
-  // height = 400;
-  type = 'line';
-  dataFormat = 'json';
-  dataSource;
-  title = 'Angular4 FusionCharts Sample';
+  chartData: any;
   
 
   constructor(private dashboardService: DashboardService) { 
-    this.dataSource = {
+    this.chartData = {
       "chart": {
           "caption": "Harry's SuperMart",
           "numberprefix": "$",
