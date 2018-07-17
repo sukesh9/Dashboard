@@ -197,3 +197,20 @@ input:checked + .slider:before {
 g[class$="creditgroup"] {
   display: none;
 }
+
+.bd-btm-grey-2p{
+  border-bottom: 2px solid lightgrey;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+}
+
+.sp-class{
+  font-size: 18px;
+  margin-top: 5px;
+}
+.h5-custom{
+
+  margin-bottom: 20px;
+      font-size: 25px;
+
+}

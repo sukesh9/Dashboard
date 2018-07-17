@@ -71,26 +71,14 @@
                                               background-color: transparent;
                                             ">
                                             <div class="jvectormap-container" style="background-color: rgb(255, 255, 255);">
-                                                <div class="table-responsive p-20">
-                                                    <table class="table">
-                                                        <thead>
-                                                            <tr>
-                                                                <th class="bdwT-0">Order Id</th>
-                                                                <th class="bdwT-0">Credit Card Payment</th>
-                                                                <th class="bdwT-0">Order Date</th>
-                                                                <th class="bdwT-0">Order Amount</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            <tr *ngFor="let item of homeData.recentTransactions">
-                                                                <td class="fw-600">{{item.orderId}}</td>
-                                                                <td><span class="badgep-10 lh-0 tt-c badge-pill" style="margin-left: 40px" [ngClass]="{'bgc-green-50 c-green-500': (item.creditCardPayment == 'yes'),'bgc-red-50 c-red-700': (item.creditCardPayment == 'no') }">{{item.creditCardPayment}}</span></td>
-                                                                <td>{{item.orderDate}}</td>
-                                                                <td><span style="margin-left: 25px" class="text-success">{{item.orderAmount | currency}}</span></td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </div>
+                                                <fusioncharts
+                                                    [id]="chart2"
+                                                    [width]="810"
+                                                    [height]="450"
+                                                    [type]="type"
+                                                    [dataFormat]="json"
+                                                    [dataSource]="chartData"
+                                                ></fusioncharts>
                                                 <div class="jvectormap-legend-cnt jvectormap-legend-cnt-h"></div>
                                                 <div class="jvectormap-legend-cnt jvectormap-legend-cnt-v"></div>
                                             </div>
@@ -103,9 +91,22 @@
                             <div class="layers">
                                 <div class="layer w-100">
                                     <div class="layers">
-                                        <div class="layer w-100">
-                                            <h5 class="mB-5">Restaurant is</h5><small class="fw-600 c-grey-700">{{restaurantOpenClose? 'Open' : 'Close'}}</small> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
-                                                <input type="checkbox" [(ngModel)]="restaurantOpenClose" (ngModelChange)="onRestaurantOpenCloseChange($event)">
+                                        <div class="layer w-100 bd-btm-grey-2p">
+                                            <h5 class="h5-custom">Restaurant is</h5><span class="fw-600 sp-class" [ngClass]="{
+                                                'c-green-500': (restaurantOpenClose),
+                                                'c-red-500': (!restaurantOpenClose) }" >{{restaurantOpenClose? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
+                                                <input type="checkbox" [(ngModel)]="restaurantOpenClose" (ngModelChange)="onRestaurantOpenCloseChange($event);">
+                                                <span class="slider round"></span>
+                                              </label></span>
+                                            <div class="mT-25">
+                                                <!-- <div class="progress-bar bgc-deep-purple-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:110%"><span class="sr-only">50% Complete</span></div> -->
+                                            </div>
+                                        </div>
+                                        <div class="layer w-100 bd-btm-grey-2p">
+                                            <h5 class="h5-custom">Dine In</h5><span class="fw-600 sp-class" [ngClass]="{
+                                                'c-green-500': (dineIn),
+                                                'c-red-500': (!dineIn) }">{{dineIn? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
+                                                <input type="checkbox" [(ngModel)]="dineIn" (ngModelChange)="onDineInChange($event)">
                                                 <span class="slider round"></span>
                                               </label></span>
                                             <div class=" mT-10">
@@ -113,15 +114,23 @@
                                             </div>
                                         </div>
                                         <div class="layer w-100">
-                                            <h5 class="mB-5">Delivery Option</h5><small class="fw-600 c-grey-700">{{delivery? 'ON' : 'OFF'}}</small> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
-                                                <input type="checkbox" [(ngModel)]="delivery" (ngModelChange)="onRestaurantOpenCloseChange($event)">
-                                                <span class="slider round"></span>
-                                              </label></span>
+                                            <h5 class="mB-5">Delivery Option</h5><small class="fw-600 c-grey-700">{{selectedDeliveryOption}}</small> <span class="pull-right c-grey-600 fsz-sm">
+                                                    <div class="dropdown">
+                                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                              Dropdown button
+                                                            </button>
+                                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                                <div  *ngFor="let item of deliveryOption">
+                                                                    <a class="dropdown-item" (click)="selectedDeliveryOption = item">{{item}}</a>
+                                                                </div>
+                                                            </div>
+                                                          </div></span>
                                             <div class=" mT-10">
                                                 <!-- <div class="progress-bar bgc-deep-purple-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%"><span class="sr-only">50% Complete</span></div> -->
                                             </div>
                                         </div>
-                                        <div class="layer w-100 mT-25">
+
+                                        <!-- <div class="layer w-100 mT-25">
                                             <h5 class="mB-5"> User Rating</h5>
                                                 <small class="fw-600 c-grey-700">
                                                     <i-star [ngStyle]="(homeData.rating >= 1) && {'fill': 'orange'}"></i-star>
@@ -146,7 +155,7 @@
                                             1 star<span style="float: right;">252</span><div class="progress mT-10">
                                                 <div class="progress-bar bgc-light-blue-500" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:40%"><span class="sr-only">40% Complete</span></div>
                                             </div>
-                                        </div>
+                                        </div> -->
                                        
                                     </div>
                                 </div>
@@ -155,7 +164,7 @@
                     </div>
                 </div>
             </div>
-            <div class="masonry-item col-md-6" style="position: absolute; right: 0%; top: 707.2px;">
+            <!-- <div class="masonry-item col-md-6" style="position: absolute; right: 0%; top: 707.2px;">
                 <div class="bd bgc-white">
                     <div class="layers">
                         <div class="layer w-100 pX-20 pT-20">
@@ -222,7 +231,27 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 
+    <!-- <div class="table-responsive p-20">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="bdwT-0">Order Id</th>
+                    <th class="bdwT-0">Credit Card Payment</th>
+                    <th class="bdwT-0">Order Date</th>
+                    <th class="bdwT-0">Order Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of homeData.recentTransactions">
+                    <td class="fw-600">{{item.orderId}}</td>
+                    <td><span class="badgep-10 lh-0 tt-c badge-pill" style="margin-left: 40px" [ngClass]="{'bgc-green-50 c-green-500': (item.creditCardPayment == 'yes'),'bgc-red-50 c-red-700': (item.creditCardPayment == 'no') }">{{item.creditCardPayment}}</span></td>
+                    <td>{{item.orderDate}}</td>
+                    <td><span style="margin-left: 25px" class="text-success">{{item.orderAmount | currency}}</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div> -->
