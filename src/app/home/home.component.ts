@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
   homeData: any = {};
 
   restaurantOpenClose: boolean; // is restaurant opne or not
-  dineIn: boolean; // is dine in open or not
+  reservation: boolean; // is dine in open or not
 
   chartData: any; // data for chart
   chartTypes: Array<string> = ["Sales","Orders"];  // whether chart is of orders or sales
@@ -93,8 +93,8 @@ export class HomeComponent implements OnInit {
 
   }
 
-  onDineInChange () {
-    let body = { 'dineIn' : this.dineIn};
+  onReservationChange () {
+    let body = { 'reservation' : this.reservation};
      this.dashboardService.postDineInStatus(body)
      .subscribe(() => console.log('scuces'));
 

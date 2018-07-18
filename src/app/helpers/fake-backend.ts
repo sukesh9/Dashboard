@@ -295,7 +295,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return of(new HttpResponse({ status: 200 }));
             }
 
-            if (request.url.endsWith('/dineInStatus') && request.method === 'POST') {
+            if (request.url.endsWith('/reservationStatus') && request.method === 'POST') {
                 // respond 200 OK
                 return of(new HttpResponse({ status: 200 }));
             }

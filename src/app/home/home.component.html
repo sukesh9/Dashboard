@@ -115,10 +115,10 @@
                                             </div>
                                         </div>
                                         <div class="layer w-100 bd-btm-grey-2p">
-                                            <h5 class="h5-custom">Dine In</h5><span class="fw-600 sp-class" [ngClass]="{
-                                                'c-green-500': (dineIn),
-                                                'c-red-500': (!dineIn) }">{{dineIn? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
-                                                <input type="checkbox" [(ngModel)]="dineIn" (ngModelChange)="onDineInChange($event)">
+                                            <h5 class="h5-custom">Reservation</h5><span class="fw-600 sp-class" [ngClass]="{
+                                                'c-green-500': (reservation),
+                                                'c-red-500': (!reservation) }">{{reservation? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
+                                                <input type="checkbox" [(ngModel)]="reservation" (ngModelChange)="onReservationChange($event)">
                                                 <span class="slider round"></span>
                                               </label></span>
                                             <div class=" mT-10">

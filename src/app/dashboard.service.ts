@@ -53,7 +53,7 @@ export class DashboardService {
   }
 
   postDineInStatus(body: any):Observable<any> {
-    let URL = (this.appUrl + 'dineInStatus').toString();
+    let URL = (this.appUrl + 'reservationStatus').toString();
     return this.http.post<any>(URL, body, httpOptions).pipe(
       tap(),
       catchError(this.handleError<any>())
