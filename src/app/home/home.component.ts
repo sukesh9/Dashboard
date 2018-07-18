@@ -113,7 +113,6 @@ export class HomeComponent implements OnInit {
     this.dashboardService.getChart(type)
       .subscribe(data => {
         console.log(data, this.chartType);
-        this.homeData = data;
       }
     );
   }
