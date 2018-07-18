@@ -284,6 +284,114 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return of(new HttpResponse({ status: 200, body: data }));
             }
 
+            if (request.url.endsWith('/delivery') && request.method === 'POST') {
+                // respond 200 OK
+                return of(new HttpResponse({ status: 200 }));
+            }
+            
+            
+            if (request.url.endsWith('/restaurantStatus') && request.method === 'POST') {
+                // respond 200 OK
+                return of(new HttpResponse({ status: 200 }));
+            }
+
+            if (request.url.endsWith('/dineInStatus') && request.method === 'POST') {
+                // respond 200 OK
+                return of(new HttpResponse({ status: 200 }));
+            }
+
+
+            
+            if ((request.url.endsWith('/chart/Sales') || request.url.endsWith('/chart/Orders')) && request.method === 'GET') {
+                let data = {
+                    "data": [
+                        {
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        },{
+                            "orderNo" : "1234",
+                            "email": "99",
+                            "orderDate": "January 5th",
+                            "subTotalAmount": "99",
+                            "deliveryAmount": "3",
+                            "taxAmount": "2",
+                            "totalAmount": "40",
+                            "creditCardPayment": "yes",
+                        }
+                    ]
+                };
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
             // pass through any requests not handled above
             return next.handle(request);
             

@@ -16,9 +16,11 @@ export class HomeComponent implements OnInit {
   dineIn: boolean; // is dine in open or not
 
   chartData: any; // data for chart
+  chartTypes: Array<string> = ["Sales","Orders"];  // whether chart is of orders or sales
+  chartType: string ="Sales";
 
   deliveryOption : Array<string> = ["Pickup","Delivery", "Delivery/Pickup"];      // delivery options in the dropdown
-  selectedDeliveryOption: string = "";                                            // to display selected option
+  selectedDeliveryOption: string = "Pickup";                                            // to display selected option
 
   type = "line";
 
@@ -74,8 +76,7 @@ export class HomeComponent implements OnInit {
   }
 
   getHome () {
-    let endPoint = 'home';
-    this.dashboardService.get(endPoint )
+    this.dashboardService.getHome()
       .subscribe(data => {
         console.log(data);
         this.homeData = data;
@@ -83,14 +84,38 @@ export class HomeComponent implements OnInit {
     );
   }
 
-  onDeliveryChange () {
-    //this.delivery = !this.delivery;
+
+  onDeliveryChange (item: string) {
+    this.selectedDeliveryOption = item;
+   let body = { 'delivery' : this.selectedDeliveryOption};
+    this.dashboardService.postDelivery(body)
+    .subscribe(() => console.log('scuces'));
+
   }
 
+  onDineInChange () {
+    let body = { 'dineIn' : this.dineIn};
+     this.dashboardService.postDineInStatus(body)
+     .subscribe(() => console.log('scuces'));
+
+  }
+
+
   onRestaurantOpenCloseChange () {
-    // if(this.restaurantOpenClose == true){
-    //   this.fontColor= {'color': 'green'};
-    // }
+    
+   let body = { 'restaurantStatus' : this.restaurantOpenClose};
+    this.dashboardService.postRestaurantOpenClose(body)
+    .subscribe(() => console.log('scuces'));
+  }
+
+  onchartTypeChange (type: string) {
+    this.chartType = type;
+    this.dashboardService.getChart(type)
+      .subscribe(data => {
+        console.log(data, this.chartType);
+        this.homeData = data;
+      }
+    );
   }
 
 }

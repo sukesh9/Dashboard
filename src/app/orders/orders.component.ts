@@ -18,8 +18,7 @@ export class OrdersComponent implements OnInit {
   }
 
   getOrders () {
-    let endPoint = 'orders';
-    this.dashboardService.get(endPoint )
+    this.dashboardService.getOrders()
       .subscribe(data => {
         this.ordersData = data;
         console.log(this.ordersData);

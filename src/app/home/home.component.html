@@ -60,7 +60,19 @@
                         <div class="peer peer-greed w-70p@lg+ w-100@lg- p-20">
                             <div class="layers">
                                 <div class="layer w-100 mB-10">
-                                    <h6 class="lh-1">Recent Transactions</h6></div>
+                                    <h6 class="lh-1">                                                    
+                                        <div class="dropdown">
+                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                              {{chartType}}
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                <div  *ngFor="let item of chartTypes">
+                                                    <a class="dropdown-item" (click)="onchartTypeChange(item)">{{item}}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </h6>
+                                </div>
                                 <div class="layer w-100">
                                     <div id="world-map-marker">
 
@@ -114,14 +126,14 @@
                                             </div>
                                         </div>
                                         <div class="layer w-100">
-                                            <h5 class="mB-5">Delivery Option</h5><small class="fw-600 c-grey-700">{{selectedDeliveryOption}}</small> <span class="pull-right c-grey-600 fsz-sm">
+                                            <h5 class="h5-custom">Delivery Option</h5><span class="fw-600 sp-class">{{selectedDeliveryOption}}</span> <span class="pull-right c-grey-600 fsz-sm">
                                                     <div class="dropdown">
                                                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                              Dropdown button
+                                                              Choose Delivery
                                                             </button>
                                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                                                 <div  *ngFor="let item of deliveryOption">
-                                                                    <a class="dropdown-item" (click)="selectedDeliveryOption = item">{{item}}</a>
+                                                                    <a class="dropdown-item" (click)="onDeliveryChange(item)">{{item}}</a>
                                                                 </div>
                                                             </div>
                                                           </div></span>
