@@ -62,7 +62,7 @@
                                 <div class="layer w-100 mB-10">
                                     <h6 class="lh-1">                                                    
                                         <div class="dropdown">
-                                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                               {{chartType}}
                                             </button>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -176,6 +176,54 @@
                     </div>
                 </div>
             </div>
+            <div class="container-fluid" style="margin-top: 337px; min-height: 711px" >
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="bgc-white bd bdrs-3 p-20 mB-20">
+                            <h4 class="c-grey-900 mB-20">Recent Transactions</h4>
+                            <div id="dataTable_wrapper" class="dataTables_wrapper">
+                                    <table *ngIf="homeData"  [mfData]="homeData.recentTransactions" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                                            <thead>
+                                                <tr role="row">
+                                                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 203px;">            
+                                                        <mfDefaultSorter by="orderId">Order Id</mfDefaultSorter>
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 302px;">
+                                                          <mfDefaultSorter by="creditCardPayment">Credit Card Payment</mfDefaultSorter>
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
+                                                          <mfDefaultSorter by="orderDate">Order Date</mfDefaultSorter>
+                                                    </th>
+                                                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 58px;">
+                                                          <mfDefaultSorter by="orderAmount">Order Amount</mfDefaultSorter>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr role="row" *ngFor="let item of mf.data">
+                                                    <td class="fw-600">{{item.orderId}}</td>
+                                                    <td><span class="badgep-10 lh-0 tt-c badge-pill" style="margin-left: 40px" [ngClass]="{'bgc-green-50 c-green-500': (item.creditCardPayment == 'yes'),'bgc-red-50 c-red-700': (item.creditCardPayment == 'no') }">{{item.creditCardPayment}}</span></td>
+                                                    <td>{{item.orderDate}}</td>
+                                                    <td><span style="margin-left: 25px" class="text-success">{{item.orderAmount | currency}}</span></td>                                                
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                  <tr>
+                                                      <td colspan="12">
+                                                          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                                                      </td>
+                                                  </tr>
+                                             </tfoot> 
+                                        </table>
+                                
+                                </div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            <!-- <div id="dataTable_wrapper" class="dataTables_wrapper"> -->
+
+            <!-- </div> -->
             <!-- <div class="masonry-item col-md-6" style="position: absolute; right: 0%; top: 707.2px;">
                 <div class="bd bgc-white">
                     <div class="layers">
@@ -246,6 +294,7 @@
             </div> -->
         </div>
     </div>
+
 
     <!-- <div class="table-responsive p-20">
         <table class="table">

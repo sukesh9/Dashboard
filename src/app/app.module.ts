@@ -20,6 +20,8 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import { OrdersComponent } from './orders/orders.component';
+import { DataTableModule } from "angular-6-datatable";
+
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
 
@@ -37,7 +39,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     HttpClientModule,
     AppRoutingModule,
     IconsModule,
-    FusionChartsModule
+    FusionChartsModule,
+    DataTableModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
+import { HomeData, OrdersTableData, SalesChartData, OrdersChartData } from './constants'
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -116,64 +117,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             //////////////////////////////////////////// DAHBOARD ///////////////////////////////////
 
             if (request.url.endsWith('/home') && request.method === 'GET') {
-                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
-                // if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
-                //     // find user by id in users array
-                //     let urlParts = request.url.split('/');
-                //     let id = parseInt(urlParts[urlParts.length - 1]);
-                //     let matchedUsers = users.filter(user => { return user.id === id; });
-                //     let user = matchedUsers.length ? matchedUsers[0] : null;
 
-                //     return of(new HttpResponse({ status: 200, body: user }));
-                // } else {
-                //     // return 401 not authorised if token is null or invalid
-                //     return throwError({ error: { message: 'Unauthorised' } });
-                // }
-                let data = {
-                    "totalOrders" : "-200",
-                    "avgOrdersPerDay" : "99",
-                    "totalSales" : "200",
-                    "uniqueCustomers": "25",
-                    "rating": "3.5",
-                    "recentTransactions": [
-                        {
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "yes"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "no"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "yes"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "no"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "no"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "yes"
-                        },{
-                            "orderId" : "1234",
-                            "orderDate": "January 5th",
-                            "orderAmount": "99",
-                            "creditCardPayment": "yes"
-                        },
-                    ]
-                };
+                let data = HomeData;
 
                 return of(new HttpResponse({ status: 200, body: data }));
             }
@@ -181,105 +126,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             /////////// order ///////////
 
             if (request.url.endsWith('/orders') && request.method === 'GET') {
-                // check for fake auth token in header and return user if valid, this security is implemented server side in a real application
-                // if (request.headers.get('Authorization') === 'Bearer fake-jwt-token') {
-                //     // find user by id in users array
-                //     let urlParts = request.url.split('/');
-                //     let id = parseInt(urlParts[urlParts.length - 1]);
-                //     let matchedUsers = users.filter(user => { return user.id === id; });
-                //     let user = matchedUsers.length ? matchedUsers[0] : null;
-
-                //     return of(new HttpResponse({ status: 200, body: user }));
-                // } else {
-                //     // return 401 not authorised if token is null or invalid
-                //     return throwError({ error: { message: 'Unauthorised' } });
-                // }
-                let data = {
-                    "data": [
-                        {
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        }
-                    ]
-                };
+                let data = OrdersTableData;
 
                 return of(new HttpResponse({ status: 200, body: data }));
             }
@@ -302,93 +149,14 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
 
             
-            if ((request.url.endsWith('/chart/Sales') || request.url.endsWith('/chart/Orders')) && request.method === 'GET') {
-                let data = {
-                    "data": [
-                        {
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        },{
-                            "orderNo" : "1234",
-                            "email": "99",
-                            "orderDate": "January 5th",
-                            "subTotalAmount": "99",
-                            "deliveryAmount": "3",
-                            "taxAmount": "2",
-                            "totalAmount": "40",
-                            "creditCardPayment": "yes",
-                        }
-                    ]
-                };
+            if (request.url.endsWith('/chart/Orders') && request.method === 'GET') {
+                let data = OrdersChartData;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
+            if (request.url.endsWith('/chart/Sales') && request.method === 'GET') {
+                let data = SalesChartData;
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }

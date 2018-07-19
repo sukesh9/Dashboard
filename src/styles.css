@@ -122,9 +122,9 @@ body {
   .border-top { border-top: 1px solid #e5e5e5; }
   .border-bottom { border-bottom: 1px solid #e5e5e5; }
 
-[role="main"] {
+/* [role="main"] {
     padding-top: 65px;
-}
+} */
 
 .no-border{
   border: none;

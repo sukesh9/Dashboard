@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
 
   chartData: any; // data for chart
   chartTypes: Array<string> = ["Sales","Orders"];  // whether chart is of orders or sales
-  chartType: string ="Sales";
+  chartType: string ="Orders";
 
   deliveryOption : Array<string> = ["Pickup","Delivery", "Delivery/Pickup"];      // delivery options in the dropdown
   selectedDeliveryOption: string = "Pickup";                                            // to display selected option
@@ -29,50 +29,11 @@ export class HomeComponent implements OnInit {
   
 
   constructor(private dashboardService: DashboardService) { 
-    this.chartData = {
-      "chart": {
-          "caption": "Harry's SuperMart",
-          "numberprefix": "$",
-          "theme": "fint",
-          "numDivLines": "5",
-          "numDivLineDashed": "0",
-          "numVDivLines": "5",
-          "vDivLineColor": "lightgrey",
-          "vDivLineThickness": "1",
-          "vDivLineAlpha": "70",
-          "vDivLineDashed": "0",
-          "vDivLineDashLen": "5",
-          "vDivLineDashGap": "3",
-          "showAlternateVGridColor": "1" 
-
-      },
-      "data": [
-          {
-              "label": "Monday",
-              "value": "880000"
-          },
-          {
-              "label": "Tuesday",
-              "value": "730000"
-          },
-          {
-              "label": "Wednesday",
-              "value": "590000"
-          },
-          {
-              "label": "thursday",
-              "value": "520000"
-          },
-          {
-              "label": "Friday",
-              "value": "330000"
-          }
-      ]
-  }
   }
 
   ngOnInit() {
     this.getHome();
+    this.getChartData(this.chartType);
   }
 
   getHome () {
@@ -108,13 +69,18 @@ export class HomeComponent implements OnInit {
     .subscribe(() => console.log('scuces'));
   }
 
-  onchartTypeChange (type: string) {
-    this.chartType = type;
+  getChartData(type: string){
     this.dashboardService.getChart(type)
       .subscribe(data => {
+        this.chartData = data;
         console.log(data, this.chartType);
       }
     );
+  }
+  onchartTypeChange (type: string) {
+    this.chartType = type;
+    this.getChartData(type);
+
   }
 
 }
