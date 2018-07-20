@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { HomeData, OrdersTableData, SalesChartData, OrdersChartData } from './constants'
+import { HomeData, OrdersTableData, SalesChartData, OrdersChartData, MenuData } from './constants'
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -147,7 +147,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return of(new HttpResponse({ status: 200 }));
             }
 
-
+            if (request.url.endsWith('/menu') && request.method === 'GET') {
+                let data = MenuData;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
             
             if (request.url.endsWith('/chart/Orders') && request.method === 'GET') {
                 let data = OrdersChartData;
@@ -160,6 +164,8 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }
+
+
             // pass through any requests not handled above
             return next.handle(request);
             

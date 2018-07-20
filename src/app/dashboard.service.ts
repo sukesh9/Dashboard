@@ -68,6 +68,14 @@ export class DashboardService {
         );
   }
 
+  getMenu (): Observable<any> {
+    let URL = (this.appUrl + 'menu').toString();
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get menu', []))
+        );
+  }
+
   
   /**
    * Handle Http operation that failed.

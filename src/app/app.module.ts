@@ -21,6 +21,8 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { FusionChartsModule } from 'angular4-fusioncharts';
 import { OrdersComponent } from './orders/orders.component';
 import { DataTableModule } from "angular-6-datatable";
+import { MenuComponent } from './menu/menu.component';
+import { GroupByPipe } from './utils/group-by.pipe';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -31,7 +33,9 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     MainNavComponent,
     SideNavComponent,
     HomeComponent,
-    OrdersComponent
+    OrdersComponent,
+    MenuComponent,
+    GroupByPipe
   ],
   imports: [
     BrowserModule,

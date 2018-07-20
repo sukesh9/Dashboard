@@ -1,0 +1,14 @@
+<div *ngIf="menuData">
+    <div *ngFor="let group of menuData.data | groupBy : 'category'">
+        <div><h3>{{group.key}}</h3></div><br/>
+        <div class="card-deck">
+            <div class="card" *ngFor="let item of group.value">
+                <h5 class="card-header">{{item.title}}  <span style="float:right">{{item.price | currency}}</span></h5>
+                <div class="card-body">
+                    <p class="card-text">{{item.description}}</p>
+                    <a href="#">Edit</a>
+                </div>
+            </div>
+        </div><br/>
+    </div>
+</div>
