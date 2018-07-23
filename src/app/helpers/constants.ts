@@ -270,14 +270,14 @@ export const MenuData = {
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "1",
+            "id": "2",
             "title" : "Lamb Biryani",
             "category" : "Biryanis",
             "description": "This is a test description This is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "1",
+            "id": "3",
             "title" : "Fish Biryani",
             "category" : "Biryanis",
             "description": "This is a test description This is a test description This is a test description",
@@ -291,35 +291,35 @@ export const MenuData = {
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "4",
+            "id": "5",
             "title" : "Jamun",
             "category" : "Deserts",
             "description": "This is a test description This is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "4",
+            "id": "6",
             "title" : "Jamun",
             "category" : "Deserts",
             "description": "This is a test description This is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "4",
+            "id": "7",
             "title" : "chicekn 65",
             "category" : "Appetizers",
             "description": "This is a test description This is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "4",
+            "id": "8",
             "title" : "chicekn 65",
             "category" : "Appetizers",
             "description": "This is a test description This is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{
-            "id": "4",
+            "id": "9",
             "title" : "chicekn 65",
             "category" : "Appetizers",
             "description": "This is a test description This is a test description This is a test description",

@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
 
   menuData: any;
 
+  selectedItem: any;
+
   ngOnInit() {
     this.getMenu();
   }
@@ -24,6 +26,10 @@ export class MenuComponent implements OnInit {
         this.menuData = data;
       }
     );
+  }
+
+  edit(){
+    console.log(this.selectedItem);
   }
 
 }

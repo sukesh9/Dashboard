@@ -6,9 +6,44 @@
                 <h5 class="card-header">{{item.title}}  <span style="float:right">{{item.price | currency}}</span></h5>
                 <div class="card-body">
                     <p class="card-text">{{item.description}}</p>
-                    <a href="#">Edit</a>
+                    <!-- <a (click)="selectedItem = item;">Edit</a> -->
+                    <button (click)="selectedItem = item;" type="button" class="btn btn-primary  menu-button" data-toggle="modal" data-target="#exampleModalCenter">
+                            Edit
+                          </button>
                 </div>
             </div>
         </div><br/>
     </div>
 </div>
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+        Launch demo modal
+      </button> -->
+      
+      <!-- Modal -->
+      <form>
+      <div *ngIf="selectedItem" class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title card-header menu-card-header" id="exampleModalLongTitle">
+                  <input name="title" [(ngModel)] = "selectedItem.title">
+                   <input style="float:right; width: 80px"name="price" [(ngModel)] = "selectedItem.price"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <textarea  [value] = "selectedItem.description" name="des" [(ngModel)] = "selectedItem.description">     
+                  </textarea>
+                <!-- <p>{{selectedItem.description}}</p>       -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="edit();" >Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
