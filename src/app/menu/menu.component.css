@@ -4,7 +4,7 @@
     color: red;
 }
 
-#exampleModalCenter input {
+#menuModalCenter input {
     border: none;
     font-size: 16px;
     padding: 10px;
@@ -15,8 +15,12 @@
     border-bottom: none;
 }   
 
-#exampleModalCenter textarea {
+#menuModalCenter textarea {
     width: 100%;
     border: none;
     height: 98px;
+}
+
+.mg-bt-20 {
+    margin-bottom: 20px;
 }
