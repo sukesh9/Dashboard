@@ -266,7 +266,7 @@ export const MenuData = {
             "id": "1",
             "title" : "Chicken Biryani",
             "category" : "Biryanis",
-            "description": "This is a test description This is a test description This is a test description",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
             "availability" : "yes",
             "price": "9"
         },{

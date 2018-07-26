@@ -82,13 +82,12 @@
                                               overflow: auto;
                                               background-color: transparent;
                                             ">
-                                            <div class="jvectormap-container" style="background-color: rgb(255, 255, 255);">
+                                            <div class="jvectormap-container col-md-3" style="background-color: rgb(255, 255, 255);">
                                                 <fusioncharts
-                                                    [id]="chart2"
                                                     [width]="810"
                                                     [height]="450"
                                                     [type]="type"
-                                                    [dataFormat]="json"
+                                                    dataFormat="json"
                                                     [dataSource]="chartData"
                                                 ></fusioncharts>
                                                 <div class="jvectormap-legend-cnt jvectormap-legend-cnt-h"></div>
@@ -107,7 +106,7 @@
                                             <h5 class="h5-custom">Restaurant is</h5><span class="fw-600 sp-class" [ngClass]="{
                                                 'c-green-500': (restaurantOpenClose),
                                                 'c-red-500': (!restaurantOpenClose) }" >{{restaurantOpenClose? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
-                                                <input type="checkbox" [(ngModel)]="restaurantOpenClose" (ngModelChange)="onRestaurantOpenCloseChange($event);">
+                                                <input type="checkbox" [(ngModel)]="restaurantOpenClose" (ngModelChange)="onRestaurantOpenCloseChange();">
                                                 <span class="slider round"></span>
                                               </label></span>
                                             <div class="mT-25">
@@ -118,7 +117,7 @@
                                             <h5 class="h5-custom">Reservation</h5><span class="fw-600 sp-class" [ngClass]="{
                                                 'c-green-500': (reservation),
                                                 'c-red-500': (!reservation) }">{{reservation? 'Open' : 'Close'}}</span> <span class="pull-right c-grey-600 fsz-sm"><label class="switch">
-                                                <input type="checkbox" [(ngModel)]="reservation" (ngModelChange)="onReservationChange($event)">
+                                                <input type="checkbox" [(ngModel)]="reservation" (ngModelChange)="onReservationChange()">
                                                 <span class="slider round"></span>
                                               </label></span>
                                             <div class=" mT-10">
