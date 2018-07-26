@@ -1,0 +1,45 @@
+.menu-button, .menu-button:focus {
+    border: none;
+    background: none;
+    color: red;
+    padding-left: 0px;
+    font-weight: 700;
+}
+
+#menuModalCenter input {
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+}
+
+.modal-menu-card-header {
+    width: 100%;
+    border-bottom: none;
+}   
+
+#menuModalCenter textarea {
+    width: 100%;
+    border: none;
+    height: 98px;
+}
+
+.mg-bt-20 {
+    margin-bottom: 20px;
+}
+
+.menu-card-header {
+    background: none;
+    border-bottom: none;
+    font-size: 16px;
+}
+
+.menu-card-body{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.menu-card-text{
+    height: 18px;
+    overflow: hidden;
+    font-size: 12px;
+}
