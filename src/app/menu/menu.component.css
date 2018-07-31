@@ -43,3 +43,11 @@
     overflow: hidden;
     font-size: 12px;
 }
+
+.ta-c{
+    text-align: center;
+}
+
+a:hover{
+    background: lightblue;
+}

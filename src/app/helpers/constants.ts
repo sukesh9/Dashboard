@@ -88,7 +88,7 @@ export const OrdersTableData = {
   
 export const SalesChartData = {
     "chart": {
-        "caption": "Harry's SuperMart",
+        "caption": "Restaurant Data",
         "numberprefix": "$",
         "theme": "fint",
         "numDivLines": "5",
@@ -129,7 +129,7 @@ export const SalesChartData = {
 
 export const OrdersChartData = {
     "chart": {
-        "caption": "Harry's SuperMart",
+        "caption": "Restaurant Data",
         "numberprefix": "$",
         "theme": "fint",
         "numDivLines": "5",
@@ -260,7 +260,7 @@ export const HomeData ={
     ]
 };
 
-export const MenuData = {
+export const CateringMenuData = {
     "data" : [
         {
             "id": "1",
@@ -355,6 +355,40 @@ export const MenuData = {
             "price": "9"
         },{
             "id": "9",
+            "title" : "chicekn 65",
+            "category" : "Appetizers",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        }
+    ]
+}
+
+export const FullMenuData = {
+    "data" : [
+        {
+            "id": "1",
+            "title" : "Chicken Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "7",
+            "title" : "chicekn 65",
+            "category" : "Appetizers",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "8",
             "title" : "chicekn 65",
             "category" : "Appetizers",
             "description": "This is a test description This is a test description This is a test description",

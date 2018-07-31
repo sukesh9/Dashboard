@@ -1,3 +1,17 @@
+<div class="layer w-100 mB-10 ta-c">
+  <h6 class="lh-1">                                                    
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{menuType}}
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div  *ngFor="let item of menuTypes">
+                  <a class="dropdown-item" (click)="onMenuTypeChange(item)">{{item}}</a>
+              </div>
+          </div>
+      </div>
+  </h6>
+</div>
 <div *ngIf="menuData">
     <div *ngFor="let group of menuData.data | groupBy : 'category'">
         <div><h3>{{group.key}}</h3></div><br/>
@@ -8,7 +22,7 @@
                             <div class="card-body menu-card-body">
                                 <p class="card-text menu-card-text">{{item.description}}</p>
                                 <!-- <a (click)="selectedItem = item;">Edit</a> -->
-                                <button (click)="selectedItem = item;" type="button" class="btn btn-primary  menu-button" data-toggle="modal" data-target="#menuModalCenter">
+                                <button (click)="selectedMenuItemToEdit = item;" type="button" class="btn btn-primary  menu-button" data-toggle="modal" data-target="#menuModalCenter">
                                         Edit
                                       </button>
                             </div>
@@ -26,19 +40,19 @@
       
       <!-- Modal -->
       <form>
-      <div *ngIf="selectedItem" class="modal fade" id="menuModalCenter" tabindex="-1" role="dialog" aria-labelledby="menuModalCenterTitle" aria-hidden="true">
+      <div *ngIf="selectedMenuItemToEdit" class="modal fade" id="menuModalCenter" tabindex="-1" role="dialog" aria-labelledby="menuModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title card-header modal-menu-card-header" id="menuModalLongTitle">
-                  <input name="title" [(ngModel)] = "selectedItem.title">
-                   <input style="float:right; width: 80px"name="price" [(ngModel)] = "selectedItem.price"></h5>
+                  <input name="title" [(ngModel)] = "selectedMenuItemToEdit.title">
+                   <input style="float:right; width: 80px"name="price" [(ngModel)] = "selectedMenuItemToEdit.price"></h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-                <textarea  [value] = "selectedItem.description" name="des" [(ngModel)] = "selectedItem.description">     
+                <textarea  [value] = "selectedMenuItemToEdit.description" name="des" [(ngModel)] = "selectedMenuItemToEdit.description">     
                   </textarea>
                 <!-- <p>{{selectedItem.description}}</p>       -->
             </div>

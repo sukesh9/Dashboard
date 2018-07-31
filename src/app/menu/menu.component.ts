@@ -13,14 +13,22 @@ export class MenuComponent implements OnInit {
 
   menuData: any;
 
-  selectedItem: any;
+  selectedMenuItemToEdit: any;
+
+  menuType: string;
+  menuTypes: Array<string>;
 
   ngOnInit() {
-    this.getMenu();
+    this.menuTypes = ["Catering Menu", "Full Menu", "Breakfast Menu", "Lunch Menu"];
+    this.menuType = this.menuTypes[0];
+    this.getMenu(this.menuType);
+
   }
 
-  getMenu() {
-    this.dashboardService.getMenu()
+  getMenu(mType?: string) {
+    let type = mType.replace(/\s/g, '');
+
+    this.dashboardService.getMenu(type)
       .subscribe(data => {
         console.log(data);
         this.menuData = data;
@@ -29,7 +37,11 @@ export class MenuComponent implements OnInit {
   }
 
   edit(){
-    console.log(this.selectedItem);
+    console.log(this.selectedMenuItemToEdit);
+  }
+
+  onMenuTypeChange(type: string){
+    this.getMenu(type);
   }
 
 }
