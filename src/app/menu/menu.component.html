@@ -1,5 +1,56 @@
-<div class="layer w-100 mB-10 ta-c">
-  <h6 class="lh-1">                                                    
+
+<nav class="ml-185">
+  <div class="dropdown w-200 pos-a">
+      <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          {{(menuType != null)? menuType : "Menu Type"}}
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <div  *ngFor="let item of menuTypes">
+                <a class="dropdown-item" (click)="onMenuTypeChange(item)">{{item}}</a>
+            </div>
+        </div>
+
+</div>
+<div class="dropdown w-200 ml-300 pos-a"  *ngIf="menuData">
+    <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Categories
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <div  *ngFor="let group of menuData.data | groupBy : 'category'">
+              <a class="dropdown-item" (click)="scroll(group.key)">{{group.key}}</a>
+          </div>
+      </div>
+</div>
+<div class="dropdown w-200 ml-600">
+  <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+     Add +
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <div  *ngFor="let item of addItems">
+          <!-- <a class="dropdown-item" (click)="addItemChange(item)">{{item}}</a> -->
+          <button (click)="selectedMenuItemToEdit = item;" class="dropdown-item" data-toggle="modal" data-target="#addMenuItemModalCenter">
+            {{item}}
+          </button>
+      </div>
+  </div>
+</div>
+</nav>
+<br>
+
+<!-- <div class="pos-a mB-10 ta-c ml-300">
+  <h6 class="lh-1  col-md-5">                                                    
+      <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Categories
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <div  *ngFor="let group of menuData.data | groupBy : 'category'">
+                  <a class="dropdown-item" (click)="scroll(group.key)">{{group.key}}</a>
+              </div>
+          </div>
+      </div>
+  </h6>
+  <h6 class="lh-1 col-md-5" >                                                    
       <div class="dropdown">
           <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{menuType}}
@@ -11,10 +62,10 @@
           </div>
       </div>
   </h6>
-</div>
-<div *ngIf="menuData">
+</div> -->
+<div *ngIf="menuData" style="position: fixed; overflow: auto; height: 600px;">
     <div *ngFor="let group of menuData.data | groupBy : 'category'">
-        <div><h3>{{group.key}}</h3></div><br/>
+        <div id="{{group.key}}"><h3>{{group.key}}</h3></div><br/>
         <div class="row">
                 <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of group.value">
                         <div class="card">
@@ -64,3 +115,62 @@
         </div>
       </div>
     </form>
+
+
+
+    <!-- Modal -->
+
+    <form>
+      <div class="modal fade" id="addMenuItemModalCenter" tabindex="-1" role="dialog" aria-labelledby="menuModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title card-header modal-menu-card-header" id="menuModalLongTitle">
+                 <span>Name</span> <input name="title" [(ngModel)] = "addMenuItem.title">
+                   <span>Price</span><input style="float:right; width: 80px"name="price" [(ngModel)] = "addMenuItem.price"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div  class="modal-header">
+                <h5 class="modal-title card-header modal-menu-card-header" id="menuModalLongTitle"><span>Menu Type</span>
+              <div class="dropdown float-r" *ngIf="menuData">
+                <button class="btn dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div  *ngFor="let item of menuTypes">
+                        <a class="dropdown-item" >{{item}}</a>
+                    </div>
+                </div>
+            </div>
+          </h5>
+            </div>
+            <div  class="modal-header">
+                <h5 class="modal-title card-header modal-menu-card-header" id="menuModalLongTitle"><span>Category</span>
+              <div class="dropdown float-r" *ngIf="menuData">
+                <button class="btn dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{addMenuItem.category}}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div  *ngFor="let group of menuData.data | groupBy : 'category'">
+                        <a class="dropdown-item" (click)="(addMenuItem.category = group.key)">{{group.key}}</a>
+                    </div>
+                </div>
+            </div>
+          </h5>
+            </div>
+
+            <div class="modal-body">
+                <textarea  [value] = "addMenuItem.description" name="des" [(ngModel)] = "addMenuItem.description">     
+                  </textarea>
+                <!-- <p>{{selectedItem.description}}</p>       -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" (click)="edit();" >Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+ 
