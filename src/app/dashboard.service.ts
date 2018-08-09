@@ -64,7 +64,7 @@ export class DashboardService {
     let URL = (this.appUrl + 'orders').toString();
     return this.http.get<any>(URL)
         .pipe(
-            catchError(this.handleError('get home', []))
+            catchError(this.handleError('get orders', []))
         );
   }
 
@@ -76,6 +76,25 @@ export class DashboardService {
             catchError(this.handleError('get menu', []))
         );
   }
+
+  getMenuTypes (): Observable<any> {
+    let URL = (this.appUrl + 'menu/menuTypes').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get menu Types', []))
+        );
+  }
+
+  getProfile (): Observable<any> {
+    let URL = (this.appUrl + 'settings/profile').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get settings profile ', []))
+        );
+  }
+
 
   
   /**

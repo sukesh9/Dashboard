@@ -1,0 +1,15 @@
+
+
+.mr-20{
+    margin-right: 20px;
+}
+
+.menu-button, .menu-button:focus {
+    border: 2px solid lightgray;
+    background: none;
+    color: red;
+    font-weight: 700;
+    width: 200px;
+    padding: 10px;
+}
+

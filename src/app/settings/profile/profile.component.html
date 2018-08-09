@@ -1,0 +1,23 @@
+<div class="container-fluid bgc-white pd-10" *ngIf="profileData">
+
+    <div class="pd-10 mg-20" >
+      <h1 class=" col-lg-7">{{profileData.restaurantName}}</h1>
+    </div>
+    <div class="pd-10 mg-20 row" >
+        <h4 class="col-lg-2" >Manager</h4> <input class="col-lg-3 profile-input" [(ngModel)]="profileData.ownerName" >
+    </div>
+    <div class="pd-10 mg-20 row" >
+        <h4 class="col-lg-2" >Phone</h4> <input class="col-lg-3 profile-input" [(ngModel)]="profileData.phone" >
+    </div>
+    <div class="pd-10 mg-20 row" >
+        <h4 class="col-lg-2" >E-Mail</h4> <input class="col-lg-3 profile-input" [(ngModel)]="profileData.email" >
+    </div>
+    <div class="pd-10 mg-20 row" >
+        <h4 class="col-lg-2" >Address</h4> <textarea class="col-lg-3 profile-input" [(ngModel)]="profileData.address" ></textarea>
+    </div>
+    <div class="pd-10 mg-20 row" >
+        <h4 class="col-lg-5" ><button (click)="saveProfile()" class="btn btn-secondary fl-r" type="button">
+            Update
+        </button></h4>
+    </div>
+  </div>

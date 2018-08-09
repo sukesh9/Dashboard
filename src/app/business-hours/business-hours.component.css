@@ -1,0 +1,38 @@
+input{
+    border: none !important;
+    font-weight: 800 !important;
+    width: 40px !important;
+}
+
+.days-list{
+    background: white;
+    border: 1px solid lightgray;
+    /* margin: 8px; */
+    padding: 4px;
+}
+
+.as-c{
+    align-self: center;
+}
+
+.business-hours{
+    font-size: 12px;
+}
+
+.span-h{
+    font-size: 50px;
+    margin-left: -50px;
+}
+
+.fs-16{
+    font-size: 16px;
+}
+
+.week-day{
+    padding-left: 65px;
+    margin-bottom: 0px;
+}
+
+.mb-20{
+    margin-bottom: 20px;
+}

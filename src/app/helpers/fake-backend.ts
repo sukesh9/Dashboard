@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
-import { HomeData, OrdersTableData, SalesChartData, OrdersChartData, FullMenuData, CateringMenuData } from './constants'
+import { HomeData, OrdersTableData, SalesChartData, OrdersChartData, FullMenuData, CateringMenuData, MenuTypes, Profile } from './constants'
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -71,6 +71,18 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.endsWith('/menu/FullMenu') && request.method === 'GET') {
                 let data = FullMenuData;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
+            if (request.url.endsWith('menu/menuTypes') && request.method === 'GET') {
+                let data = MenuTypes;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
+            if (request.url.endsWith('settings/profile') && request.method === 'GET') {
+                let data = Profile;
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }

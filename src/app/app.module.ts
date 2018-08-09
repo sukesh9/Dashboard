@@ -23,6 +23,11 @@ import { OrdersComponent } from './orders/orders.component';
 import { DataTableModule } from "angular-6-datatable";
 import { MenuComponent } from './menu/menu.component';
 import { GroupByPipe } from './utils/group-by.pipe';
+import { BusinessHoursComponent } from './business-hours/business-hours.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SettingsComponent } from './settings/settings.component';
+import { ProfileComponent } from './settings/profile/profile.component';
+import { OperationsComponent } from './settings/operations/operations.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -35,9 +40,14 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     HomeComponent,
     OrdersComponent,
     MenuComponent,
-    GroupByPipe
+    GroupByPipe,
+    BusinessHoursComponent,
+    SettingsComponent,
+    ProfileComponent,
+    OperationsComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
     HttpClientModule,

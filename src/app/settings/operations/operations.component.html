@@ -1,0 +1,76 @@
+<div class="container-fluid bgc-white pd-10">
+
+    <div class="pd-10 mg-20" >
+      <div>
+          <h4 class="h5-custom">Default estimates</h4>
+          <div>
+            <p>Change your default delivery and pickup estimates to accurately reflect the time it takes for you to make your food and get it to your customers. Remember, you can always change these estimates for each order.</p>
+          </div>
+      </div>
+      <div>
+          <h6>Default pickup estimate</h6>
+          <div>
+              <button (click)="reduceEstimate('pickUp')">-</button>
+                <input type='text' [(ngModel)]="defaultPickupEstimate" />
+              <button (click)="increaseEstimate('pickUp')" >+</button>
+          </div>
+      </div>
+      <div>
+          <h6>Default delivery estimate</h6>
+          <div>
+            <button (click)="reduceEstimate('delivery')">-</button>
+              <input type='text' [(ngModel)]="defaultDeliveryEstimate" />
+            <button (click)="increaseEstimate('delivery')" >+</button>
+          </div>
+      </div>
+    </div>
+  
+    <div class="pd-10 mg-20">
+      <div class="layer w-100">
+        <h4 class="h5-custom">Auto-print receipts</h4><span class="fw-600 sp-class fl-l mr-20" [ngClass]="{
+            'c-green-500': (autoPrintReceipts),
+            'c-red-500': (!autoPrintReceipts) }" >{{autoPrintReceipts? 'Yes' : 'No'}}</span> <span class="c-grey-600 fsz-sm"><label class="switch">
+            <input type="checkbox" [(ngModel)]="autoPrintReceipts" (ngModelChange)="onautoPrintReceiptsChange();">
+            <span class="slider round"></span>
+          </label></span>
+        <div class="mT-25">
+            <div>
+                <h6>Number of copies to auto-print</h6>
+                <div>
+                  <button (click)="(autoPrintValue = autoPrintValue - 1) ">-</button>
+                    <input type='text' [(ngModel)]="autoPrintValue" />
+                  <button (click)="(autoPrintValue = autoPrintValue + 1)" >+</button>
+                </div>
+            </div>      
+        </div>
+      </div>
+    </div>
+  
+    <div class=" mg-20 pd-10">
+        <div>
+            <h4>Test Order</h4>
+            <div>
+              <p>Send yourself a test order to make sure everything is functioning correctly.</p>
+            </div>
+            <button (click)="sendTestOrder()" type="button" class="btn btn-primary  menu-button" data-toggle="modal" data-target="#menuModalCenter">
+                Send Test Order
+            </button>
+        </div>
+    </div>
+  
+    <div class=" mg-20 pd-10 row">
+        <h4 class="col-lg-3">Order Confirmation By</h4>
+  
+            <div class="dropdown w-200 col-lg-4">
+            <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{(SelectedOrderConfirmation != null)? SelectedOrderConfirmation : "Select"}}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"  *ngIf="(orderConfirmationList != null)" >
+                  <div *ngFor="let item of orderConfirmationList">
+                      <a class="dropdown-item" (click)="onOrderConfirmationListChange(item)">{{item}}</a>
+                  </div>
+              </div>
+      
+      </div>
+    </div>
+  </div>

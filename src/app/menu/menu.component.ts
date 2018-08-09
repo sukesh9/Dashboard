@@ -25,15 +25,24 @@ export class MenuComponent implements OnInit {
   addMenuItem: MenuItem;
 
   ngOnInit() {
-    this.menuTypes = ["Catering Menu", "Full Menu", "Breakfast Menu", "Lunch Menu"];
     this.addItems = ["Add Category", "Add Item"];
-    this.menuType = this.menuTypes[0];
-    this.getMenu(this.menuType);
+    this.getMenuTypes();
     this.addMenuItem = new MenuItem();
 
   }
 
-  getMenu(mType?: string) {
+  getMenuTypes () {
+    let res = null;
+      this.dashboardService.getMenuTypes()
+        .subscribe(data => {
+           this.menuTypes =  data.data;
+           this.menuType = this.menuTypes[0];
+           this.getMenu(this.menuType);
+        }
+      );
+  }
+
+  getMenu (mType?: string) : void {
     let type = mType.replace(/\s/g, '');
 
     this.dashboardService.getMenu(type)
@@ -48,12 +57,12 @@ export class MenuComponent implements OnInit {
     console.log(this.selectedMenuItemToEdit);
   }
 
-  onMenuTypeChange(type: string){
+  onMenuTypeChange(type: string): void{
     this.menuType = type;
     this.getMenu(type);
   }
 
-  scroll(element){   
+  scroll(element) : void{   
     var ele = document.getElementById(element);   
     window.scrollTo(ele.offsetLeft,ele.offsetTop); }
 

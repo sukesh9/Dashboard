@@ -398,4 +398,16 @@ export const FullMenuData = {
     ]
 }
   
+export const MenuTypes = {
+    data : ["Catering Menu", "Full Menu", "Breakfast Menu", "Lunch Menu"]
+}
 
+export const Profile = {
+    data : {
+        "restaurantName" : "Clorder",
+        "ownerName" : "Karthik Jakkampudi",
+        "phone" : "123456779",
+        "email" : "karthi@clorder.com",
+        "address" : "1234 los angeles Blvd, los Angeles, California, 90890"
+    }
+}
