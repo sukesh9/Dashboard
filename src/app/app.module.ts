@@ -28,6 +28,9 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './settings/profile/profile.component';
 import { OperationsComponent } from './settings/operations/operations.component';
+import { ReportsComponent } from './reports/reports.component';
+import { ItemSummaryComponent } from './reports/item-summary/item-summary.component';
+import { PromotionSummaryComponent } from './reports/promotion-summary/promotion-summary.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -44,7 +47,10 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     BusinessHoursComponent,
     SettingsComponent,
     ProfileComponent,
-    OperationsComponent
+    OperationsComponent,
+    ReportsComponent,
+    ItemSummaryComponent,
+    PromotionSummaryComponent
   ],
   imports: [
     NgbModule.forRoot(),

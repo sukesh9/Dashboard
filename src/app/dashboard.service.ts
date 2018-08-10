@@ -95,6 +95,15 @@ export class DashboardService {
         );
   }
 
+  getitemSummary (): Observable<any> {
+    let URL = (this.appUrl + 'reports/itemSummary').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get reports item summary ', []))
+        );
+  }
+
 
   
   /**

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IconHome, IconFile, IconShoppingCart, IconUsers, IconBarChart2, IconLayers, IconTrendingUp, IconStar } from 'angular-feather';
+import { IconHome, IconFile, IconShoppingCart, IconUsers, IconBarChart2, IconLayers, IconTrendingUp, IconStar, IconCalendar } from 'angular-feather';
 
 const icons = [
   IconHome,
@@ -10,7 +10,8 @@ const icons = [
   IconBarChart2,
   IconLayers,
   IconTrendingUp,
-  IconStar
+  IconStar,
+  IconCalendar
 ];
 
 @NgModule({

@@ -411,3 +411,84 @@ export const Profile = {
         "address" : "1234 los angeles Blvd, los Angeles, California, 90890"
     }
 }
+
+export const ItemSummary = {
+    "data" : {
+        "orderReport":{
+            "totalRevenue" : "6000",
+            "totalOrders" : "200",
+            "averageOrderValue" : "39"
+        },
+        "summary":[
+            {
+                "title" : "Chicken Biryani",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "jilebi",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "Mutton Biryani",
+                "quantity" : "57",
+                "amount": "9"
+            },{
+                "title" : "Fish Biryani",
+                "quantity" : "57",
+                "amount": "9"
+            }
+        ]
+    }
+}
