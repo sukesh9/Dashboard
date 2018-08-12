@@ -492,3 +492,45 @@ export const ItemSummary = {
         ]
     }
 }
+
+export const PromotionSummary = {
+    data: [
+        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },        {
+            "promotionName" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        }
+    ]
+}

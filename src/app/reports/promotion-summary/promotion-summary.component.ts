@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { DashboardService } from '../../dashboard.service';
+import { PromotionSummary } from '../reports.model'
+
+
 
 @Component({
   selector: 'app-promotion-summary',
@@ -7,9 +11,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromotionSummaryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dashboardService: DashboardService) { }
+
+  private promotionSummaryData: PromotionSummary[];
 
   ngOnInit() {
+    this.getPromotionSummaryData();
+
+  }
+
+  getPromotionSummaryData() {
+    this.dashboardService.getPromotionSummary()
+    .subscribe(data => {
+      this.promotionSummaryData = data.data;
+      console.log(this.promotionSummaryData);
+    }
+  );
   }
 
 }

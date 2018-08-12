@@ -15,3 +15,10 @@ export class ItemSummary{
     summary : Summary[];
 
 }
+
+export class PromotionSummary{
+    promotionName: string;
+    totalOrders: string;
+    totalAmount: string;
+    
+}

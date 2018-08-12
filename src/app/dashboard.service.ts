@@ -104,6 +104,15 @@ export class DashboardService {
         );
   }
 
+  getPromotionSummary (): Observable<any> {
+    let URL = (this.appUrl + 'reports/promotionSummary').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get reports item summary ', []))
+        );
+  }
+
 
   
   /**
