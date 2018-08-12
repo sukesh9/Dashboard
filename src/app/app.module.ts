@@ -31,6 +31,7 @@ import { OperationsComponent } from './settings/operations/operations.component'
 import { ReportsComponent } from './reports/reports.component';
 import { ItemSummaryComponent } from './reports/item-summary/item-summary.component';
 import { PromotionSummaryComponent } from './reports/promotion-summary/promotion-summary.component';
+import { CustomerSummaryComponent } from './reports/customer-summary/customer-summary.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -50,7 +51,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     OperationsComponent,
     ReportsComponent,
     ItemSummaryComponent,
-    PromotionSummaryComponent
+    PromotionSummaryComponent,
+    CustomerSummaryComponent
   ],
   imports: [
     NgbModule.forRoot(),

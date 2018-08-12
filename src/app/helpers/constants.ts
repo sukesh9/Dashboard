@@ -534,3 +534,53 @@ export const PromotionSummary = {
         }
     ]
 }
+
+export const CustomerSummary = {
+    data : [
+        {
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        },{
+            "email" : "deal25",
+            "totalOrders" : "20",
+            "totalAmount" : "300"
+        }
+    ]
+}

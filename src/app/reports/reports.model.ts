@@ -22,3 +22,9 @@ export class PromotionSummary{
     totalAmount: string;
     
 }
+
+export class CustomerSummary {
+    email: string;    
+    totalOrders: string;
+    totalAmount: string;
+}
