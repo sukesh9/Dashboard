@@ -1,21 +1,20 @@
-<div class="dropdown w-200 mb-20">
-  <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      {{(menuType != null)? menuType : "Menu Type"}}
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <div  *ngFor="let item of menuTypes">
-            <a class="dropdown-item" (click)="onMenuTypeChange(item)">{{item}}</a>
-        </div>
-    </div>
 
-</div>
-<div *ngFor="let weekDay of weekDaysList">
-  <div class="row days-list">
-      <p class="col-md-3 as-c fw-600 fs-16 week-day">{{weekDay}}</p>
-      <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-2"></ngb-timepicker><span class="as-c span-h"> - </span>
-      <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-4"></ngb-timepicker>
-      <div class="col-md-2 as-c fw-500 fl-r">
-        <input type="checkbox"> <span class="cl-g"> Closed for the day?</span>
-      </div>
+
+<div class="container-fluid bgc-white pd-10">
+    <div class="pd-10 mg-20">
+        <ngb-tabset>
+            <ngb-tab>
+                <ng-template ngbTabTitle><b>Regular Hours</b></ng-template>
+                <ng-template ngbTabContent>
+                    <app-regular-hours></app-regular-hours>
+                </ng-template>
+            </ngb-tab>
+            <ngb-tab>
+                <ng-template ngbTabTitle><b>Special Hours</b></ng-template>
+                <ng-template ngbTabContent>
+                        <app-special-hours></app-special-hours>
+                </ng-template>
+            </ngb-tab>
+        </ngb-tabset>
     </div>
-</div>
+  </div>

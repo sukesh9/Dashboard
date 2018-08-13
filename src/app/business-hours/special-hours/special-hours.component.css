@@ -1,0 +1,7 @@
+.no-bd{
+    border: none;
+}
+
+.bd-lg{
+    border: 1px solid lightgray;
+}

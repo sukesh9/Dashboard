@@ -60,15 +60,15 @@
                   <a class="dropdown-item" (click)="onMenuTypeChange(item)">{{item}}</a>
               </div>
           </div>
-      </div>
+      </div> style="position: fixed; overflow: auto; height: 600px;"
   </h6>
 </div> -->
-<div *ngIf="menuData" style="position: fixed; overflow: auto; height: 600px;">
+<div *ngIf="menuData">
     <div *ngFor="let group of menuData.data | groupBy : 'category'">
         <div id="{{group.key}}"><h3>{{group.key}}</h3></div><br/>
         <div class="row">
                 <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of group.value">
-                        <div class="card">
+                        <div class="card  light">
                             <h5 class="card-header menu-card-header">{{item.title}}  <span style="float:right; color: grey">{{item.price | currency}}</span></h5>
                             <div class="card-body menu-card-body">
                                 <p class="card-text menu-card-text">{{item.description}}</p>

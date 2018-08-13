@@ -1,8 +1,8 @@
 body {
     font-size: .875rem;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
-    background-color: #f8f9fa!important;
-    /* color: #72777a; */
+    background-color: #f8f9fa !important;
+     /* color: #72777a;  */
     color: black;
   }
   
@@ -244,7 +244,18 @@ ngb-timepicker .chevron{
 .pd-10{
   padding: 10px;
 }
+.pd-20{
+  padding: 20px;
+}
 
 .fl-l{
   float: left;
+}
+
+.as-c{
+  align-self: center;
+}
+
+.mr-10{
+  margin-right: 10px;
 }

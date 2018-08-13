@@ -5,6 +5,15 @@
     padding-left: 0px;
     font-weight: 700;
 }
+.fixed-top-10{
+    position: fixed;
+    background: #f8f9fa;
+    z-index: 1030;
+}
+
+.light:hover {
+    border: 2px solid greenyellow;
+}
 
 #menuModalCenter input {
     border: none;

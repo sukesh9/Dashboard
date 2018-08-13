@@ -32,6 +32,8 @@ import { ReportsComponent } from './reports/reports.component';
 import { ItemSummaryComponent } from './reports/item-summary/item-summary.component';
 import { PromotionSummaryComponent } from './reports/promotion-summary/promotion-summary.component';
 import { CustomerSummaryComponent } from './reports/customer-summary/customer-summary.component';
+import { RegularHoursComponent } from './business-hours/regular-hours/regular-hours.component';
+import { SpecialHoursComponent } from './business-hours/special-hours/special-hours.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -52,7 +54,9 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     ReportsComponent,
     ItemSummaryComponent,
     PromotionSummaryComponent,
-    CustomerSummaryComponent
+    CustomerSummaryComponent,
+    RegularHoursComponent,
+    SpecialHoursComponent
   ],
   imports: [
     NgbModule.forRoot(),

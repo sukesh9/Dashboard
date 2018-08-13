@@ -1,0 +1,34 @@
+
+<div class="container-fluid bgc-white pd-10">
+    <div class="pd-10 mg-20">
+        <div class="row days-list">
+            <div class=" mg-20 pd-20 bd-lg">
+                <div>
+                    <h4>Create Future Special Closures / Hours</h4>
+                    <div>
+                      <p>Have an upcoming vacation or holiday observance? Stop inbound orders by setting up an upcoming closure below. All of your menus for that day will be shut off for ordering.</p>
+                    </div>
+                    <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+                          [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+                    Create Special Hours
+                  </button>
+                  <div id="collapseExample" [ngbCollapse]="isCollapsed">
+                      <div class="card no-bd">
+                        <div class="card-body">
+                            <div class="row days-list">
+                                <p class="col-md-3 as-c fw-600 fs-16 week-day">{{weekDay}}</p>
+                                <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-2"></ngb-timepicker><span class="as-c span-h"> - </span>
+                                <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-4"></ngb-timepicker>
+                                <div class="col-md-2 as-c fw-500 fl-r">
+                                  <input type="checkbox"> <span class="cl-g"> Closed for the day?</span>
+                                </div>
+                              </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+          </div>
+    </div>
+  </div>
