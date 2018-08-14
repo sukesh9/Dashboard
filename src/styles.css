@@ -259,3 +259,19 @@ ngb-timepicker .chevron{
 .mr-10{
   margin-right: 10px;
 }
+.btn-no-bg{
+  background: none;
+  border: 1px solid lightgray;
+}
+
+.br-5{
+  border-radius: 5px !important;
+}
+
+.margin-r-5{
+  margin-right: 5px !important;
+}
+
+.fs-17{
+  font-size: 17px;
+}

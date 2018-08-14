@@ -17,6 +17,10 @@ export class OrdersComponent implements OnInit {
     this.getOrders();
   }
 
+  onSearch(searchObj){
+    console.log("Orders", searchObj);
+  }
+
   getOrders () {
     this.dashboardService.getOrders()
       .subscribe(data => {

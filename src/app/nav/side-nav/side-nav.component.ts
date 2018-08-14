@@ -7,7 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SideNavComponent implements OnInit {
 
-  constructor() { }
+  isActive: string;
+
+  constructor() { 
+    this.isActive = "Dashboard";
+  }
 
   ngOnInit() {
   }

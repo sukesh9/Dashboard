@@ -1,50 +1,50 @@
-<nav class="col-md-2 d-none d-md-block bg-white sidebar">
+<nav class="col-md-2 d-none d-md-block bg-white sidebar fs-17">
     <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
-          <a class="nav-link active" routerLink="/home">
+          <a class="nav-link" [ngClass]="{'active': (isActive == 'Dashboard')}" (click)="(isActive = 'Dashboard')" routerLink="/home">
               <i-home></i-home>
               Dashboard <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link"  routerLink="/orders">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Orders')}" (click)="(isActive = 'Orders')"  routerLink="/orders">
               <i-file></i-file>
             Orders
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">
+          <a class="nav-link"   [ngClass]="{'active': (isActive == 'Statements')}" (click)="(isActive = 'Statements')"   routerLink="/orders">
               <i-shopping-cart></i-shopping-cart>
             Statements
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/reports">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Reports')}" (click)="(isActive = 'Reports')" routerLink="/reports">
               <i-users></i-users>
             Reports
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/menu">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Menu')}" (click)="(isActive = 'Menu')" routerLink="/menu">
               <i-bar-chart-2></i-bar-chart-2>
             Menu
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/businessHours">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Business Hours')}" (click)="(isActive = 'Business Hours')" routerLink="/businessHours">
               <i-users></i-users>
             Business Hours
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Marketing')}" (click)="(isActive = 'Marketing')" routerLink="/settings">
               <i-layers></i-layers>
             Marketing
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="/settings">
+          <a class="nav-link"  [ngClass]="{'active': (isActive == 'Settings')}" (click)="(isActive = 'Settings')" routerLink="/settings">
               <i-layers></i-layers>
             Settings
           </a>

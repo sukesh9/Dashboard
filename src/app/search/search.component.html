@@ -1,0 +1,50 @@
+ <div class="container-fluid bgc-white pd-10">
+    <div class="pd-10 mg-20 row">
+      <div class="col-md-2">
+          <div class="dropdown">
+              <button class="btn btn-no-bg dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{selectedPeriod? selectedPeriod : "Select" }}
+              </button>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div  *ngFor="let item of periodList">
+                      <a class="dropdown-item" (click)="onperiodChange(item)">{{item}}</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+            <form class="form-inline col-md-3">
+                <div class="form-group">
+                    <div class="input-group">
+                        <h5 class=" as-c margin-r-5">From</h5>
+                    <input class="form-control br-5" placeholder="yyyy-mm-dd" 
+                            name="dp" [(ngModel)]="fromDate" ngbDatepicker #fd="ngbDatepicker" (dateSelect)="fromDateChange($event)">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="fd.toggle();" type="button">
+                            <i-calendar></i-calendar>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </form>
+            <form class="form-inline col-md-3">
+                <div class="form-group">
+                    <div class="input-group">
+                        <h5 class=" as-c  margin-r-5">To</h5>
+                    <input class="form-control br-5" placeholder="yyyy-mm-dd"
+                            name="dp" [(ngModel)]="toDate" ngbDatepicker #td="ngbDatepicker"  (dateSelect)="toDateChange($event)">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" (click)="td.toggle()" type="button">
+                            <i-calendar></i-calendar>
+                        </button>
+                    </div>
+                    </div>
+                </div>
+            </form>
+            <div class="col-md-3">
+              <button class="btn btn-primary" (click)="OnSearch()" >
+                Search
+              </button>
+            </div>
+        
+    </div>
+</div>
