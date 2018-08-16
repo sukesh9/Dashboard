@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
   deliveryOption : Array<string> = ["Pickup","Delivery", "Delivery/Pickup"];      // delivery options in the dropdown
   selectedDeliveryOption: string = "Pickup";                                            // to display selected option
 
-  type = "line";
+ // type = "line";
+  type = "column2d";
 
   fontColor: any;
 

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
+import * as moment from 'moment';
+
 
 
 @Component({
@@ -16,6 +18,10 @@ export class RegularHoursComponent implements OnInit {
 
   private fromDate: Date;
 
+  private locale = 'en'; // or whatever you want...
+  private  hours = [];
+  
+  
 
   constructor(private dashboardService: DashboardService) { }
 
@@ -23,6 +29,7 @@ export class RegularHoursComponent implements OnInit {
     this.time = {hour: 13, minute: 30};
     this.weekDaysList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     this.getMenuTypes();
+    this.getHoursDropDown();
 
   }
   getMenuTypes () {
@@ -33,6 +40,18 @@ export class RegularHoursComponent implements OnInit {
           this.menuType = this.getMenuTypes[0];
       }
     );
+  }
+
+  getHoursDropDown(){
+    for(let hour = 0; hour < 24; hour++) {
+      this.hours.push(moment({ hour }).format('h:mm A'));
+      this.hours.push(
+          moment({
+              hour,
+              minute: 30
+          }).format('h:mm A')
+      );
+  }
   }
 
   onMenuTypeChange(type: string): void{

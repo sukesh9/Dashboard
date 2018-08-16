@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-special-hours',
@@ -10,8 +11,23 @@ export class SpecialHoursComponent implements OnInit {
   constructor() { }
   public isCollapsed = false;
 
+  private  hours = [];
+
   ngOnInit() {
-    
+    this.getHoursDropDown();
+
+  }
+  
+  getHoursDropDown(){
+    for(let hour = 0; hour < 24; hour++) {
+      this.hours.push(moment({ hour }).format('h:mm A'));
+      this.hours.push(
+          moment({
+              hour,
+              minute: 30
+          }).format('h:mm A')
+      );
+  }
   }
 
 }

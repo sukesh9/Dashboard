@@ -101,6 +101,7 @@ export const SalesChartData = {
         "vDivLineDashLen": "5",
         "vDivLineDashGap": "3",
         "showAlternateVGridColor": "1" 
+        
 
     },
     "data": [

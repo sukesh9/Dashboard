@@ -9,6 +9,7 @@
     border: 1px solid lightgray;
     /* margin: 8px; */
     padding: 4px;
+    height: 75px;
 }
 
 
@@ -17,8 +18,9 @@
 }
 
 .span-h{
-    font-size: 50px;
-    margin-left: -50px;
+    font-size: 24px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .fs-16{

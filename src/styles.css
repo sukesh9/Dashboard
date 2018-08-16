@@ -275,3 +275,7 @@ ngb-timepicker .chevron{
 .fs-17{
   font-size: 17px;
 }
+
+[role="tablist"] {
+  font-size: 18px; /* Space for fixed navbar */
+}

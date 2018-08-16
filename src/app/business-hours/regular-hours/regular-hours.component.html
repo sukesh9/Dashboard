@@ -15,8 +15,16 @@
         <div *ngFor="let weekDay of weekDaysList">
           <div class="row days-list">
               <p class="col-md-3 as-c fw-600 fs-16 week-day">{{weekDay}}</p>
-              <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-2"></ngb-timepicker><span class="as-c span-h"> - </span>
-              <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-4"></ngb-timepicker>
+              <select class="custom-select as-c col-md-2">                   
+                <option *ngFor="let item of hours">{{item}}</option>
+             </select>
+             <span class="as-c span-h"> - </span>
+             <select class="custom-select as-c  col-md-2">                   
+                    <option *ngFor="let item of hours">{{item}}</option>
+             </select>
+
+              <!-- <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-2"></ngb-timepicker><span class="as-c span-h"> - </span>
+              <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-4"></ngb-timepicker> -->
               <div class="col-md-2 as-c fw-500 fl-r">
                 <input type="checkbox"> <span class="cl-g"> Closed for the day?</span>
               </div>
