@@ -84,3 +84,6 @@ a:hover{
 .float-r{
     float: right;
 }
+.pd-l-15{
+    padding-left: 15px !important;
+}

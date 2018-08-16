@@ -2,21 +2,21 @@
   <thead>
       <tr role="row">
           <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 203px;">            
-              <mfDefaultSorter by="orderNo">Promotion Name</mfDefaultSorter>
+              <mfDefaultSorter by="email">E Mail</mfDefaultSorter>
           </th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 302px;">
-                <mfDefaultSorter by="email">Total Orders</mfDefaultSorter>
+                <mfDefaultSorter by="totalAmount">Amount</mfDefaultSorter>
           </th>
           <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
-                <mfDefaultSorter by="orderDate">Total Amount</mfDefaultSorter>
+                <mfDefaultSorter by="totalOrders">Orders</mfDefaultSorter>
           </th>
       </tr>
   </thead>
   <tbody>
       <tr role="row" *ngFor="let item of mf.data">
           <td class="sorting_1">{{item.email}}</td>
-          <td>{{item.totalOrders}}</td>
           <td>{{item.totalAmount | currency}}</td>
+          <td>{{item.totalOrders}}</td>
       </tr>
   </tbody>
   <tfoot>

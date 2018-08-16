@@ -538,47 +538,47 @@ export const PromotionSummary = {
 export const CustomerSummary = {
     data : [
         {
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         },{
-            "email" : "deal25",
+            "email" : "test@test.com",
             "totalOrders" : "20",
             "totalAmount" : "300"
         }
