@@ -3,7 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { HomeData, OrdersTableData, SalesChartData, OrdersChartData, FullMenuData, CateringMenuData, MenuTypes, Profile, ItemSummary,
-         PromotionSummary, CustomerSummary} from './constants'
+         PromotionSummary, CustomerSummary, BillingSummary, BillingStatements} from './constants'
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
@@ -102,6 +102,18 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.endsWith('reports/customerSummary') && request.method === 'GET') {
                 let data = CustomerSummary;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
+            if (request.url.endsWith('statements/billingSummary') && request.method === 'GET') {
+                let data = BillingSummary;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+            
+            if (request.url.endsWith('statements/billingStatements') && request.method === 'GET') {
+                let data = BillingStatements;
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }

@@ -584,3 +584,150 @@ export const CustomerSummary = {
         }
     ]
 }
+
+export const BillingSummary = {
+    data : [
+        {
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        },{
+            "type": "type",
+            "orders": "type",
+            "subTotal": "type",
+            "tax": "type",
+            "delivery": "type",
+            "tip": "type",
+            "discount": "type",
+            "donation": "type",
+            "ccFee": "type",
+            "total": "type"
+        }
+    ]
+}
+
+export const BillingStatements = {
+    data : [
+        {
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        },{
+            "invoiceDate" : "10/20/2018",
+            "invoiceAmount" : "30",
+            "download" : "download"
+        } 
+    ]
+}

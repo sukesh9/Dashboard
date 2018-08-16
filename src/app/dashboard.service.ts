@@ -121,6 +121,24 @@ export class DashboardService {
             catchError(this.handleError('get reports item summary ', []))
         );
   }
+  
+  getBillingSummary (): Observable<any> {
+    let URL = (this.appUrl + 'statements/billingSummary').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get reports item summary ', []))
+        );
+  }
+
+  getBillingStatements (): Observable<any> {
+    let URL = (this.appUrl + 'statements/billingStatements').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get reports item summary ', []))
+        );
+  }
 
 
 

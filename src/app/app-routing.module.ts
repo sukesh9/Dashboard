@@ -7,6 +7,7 @@ import { MenuComponent } from './menu/menu.component';
 import { BusinessHoursComponent } from './business-hours/business-hours.component';
 import { SettingsComponent } from './settings/settings.component'
 import { ReportsComponent } from './reports/reports.component'
+import { StatementsComponent } from './statements/statements.component'
 
 
 const routes: Routes = [
@@ -16,9 +17,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
   { path: 'businessHours', component: BusinessHoursComponent },
   { path: 'settings', component: SettingsComponent },
-  { path: 'reports', component: ReportsComponent }
-
-
+  { path: 'reports', component: ReportsComponent },
+  { path: 'statements', component: StatementsComponent }
 ];
 
 @NgModule({
