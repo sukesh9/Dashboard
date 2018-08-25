@@ -279,3 +279,23 @@ ngb-timepicker .chevron{
 [role="tablist"] {
   font-size: 18px; /* Space for fixed navbar */
 }
+
+
+
+.big svg.feather{
+  height: 80px;
+  width: 80px;
+}
+
+.custom-bg{
+  height: -webkit-fill-available;
+}
+
+.mr-20{
+  margin-right: 20px !important;
+}
+
+.br-5{
+  border-radius: 5px;
+}
+

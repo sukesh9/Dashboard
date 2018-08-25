@@ -24,11 +24,21 @@ export class MenuComponent implements OnInit {
   addItems: Array<string>;           // Drop down list to add 
   addMenuItem: MenuItem;
 
+  selectedGroup: any;
+  selectedGroupData: any
+
   ngOnInit() {
     this.addItems = ["Add Category", "Add Item"];
     this.getMenuTypes();
     this.addMenuItem = new MenuItem();
 
+  }
+  groupSelected(group){
+    this.selectedGroupData = this.menuData.filter(item => {
+      if(item.category == group){
+        return item;
+      }
+    })
   }
 
   getMenuTypes () {
@@ -48,7 +58,7 @@ export class MenuComponent implements OnInit {
     this.dashboardService.getMenu(type)
       .subscribe(data => {
         console.log(data);
-        this.menuData = data;
+        this.menuData = data.data;
       }
     );
   }

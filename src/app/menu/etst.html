@@ -62,20 +62,19 @@
                   </div>
               </div>
           </div> style="position: fixed; overflow: auto; height: 600px;"
-      </h6> class="btn-group" role="group" aria-label="Button group with nested dropdown"
+      </h6>
     </div> -->
     <div *ngIf="menuData" class="row">
-        <div class="btn-group-vertical col-lg-2" role="group" style="height: -webkit-fill-available; border-right: 1px solid lightgray" >
-            <div *ngFor="let group of menuData | groupBy : 'category'" style="width:100%;    margin-bottom: 11px;">
-                    <button type="button" style="background: none;" class="btn" (click)="groupSelected(group.key)"><div id="{{group.key}}"><h3>{{group.key}}</h3></div></button><br/>
+        <div class="btn-group-vertical col-lg-2" style="    height: -webkit-fill-available;" >
+            <div *ngFor="let group of menuData | groupBy : 'category'">
+                    <button (click)="selectedGroup = group.key"><div id="{{group.key}}"><h3>{{group.key}}</h3></div></button><br/>
             </div>
         </div>
     
-        <div  class="col-lg-10" >
-        <div >
-            <div>
+        <div class="col-lg-10"  *ngFor="let group of menuData | groupBy : 'category'" >
+            <div  *ngIf="(selectedGroup == group.key)">
                     <div class="row">
-                            <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of selectedGroupData">
+                            <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of group.value">
                                     <div class="card  light">
                                         <h5 class="card-header menu-card-header">{{item.title}}  <span style="float:right; color: grey">{{item.price | currency}}</span></h5>
                                         <div class="card-body menu-card-body">
@@ -89,7 +88,7 @@
                                 </div><br/>
                     </div>
             </div>
-        </div>
+    
     </div>
     </div>
     </div>

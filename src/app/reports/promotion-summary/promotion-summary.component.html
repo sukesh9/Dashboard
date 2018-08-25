@@ -1,31 +1,39 @@
 
+<div class="container-fluid bgc-white pd-10 custom-bg">
+    <div class="pd-10 mg-20">
+            <nav class="navbar navbar-light bg-light mB-20 br-5">
+                    <h2 class="c-grey-900 fw-700"><span class="mr-20"><a routerLink="/reports"><button class="btn btn-secondary">&laquo; Back</button></a></span>Promotion Summary</h2>
+                </nav>
 
-     <table *ngIf="promotionSummaryData"  [mfData]="promotionSummaryData" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
-      <thead>
-          <tr role="row">
-              <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 203px;">            
-                  <mfDefaultSorter by="orderNo">Promotion Name</mfDefaultSorter>
-              </th>
-              <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 302px;">
-                    <mfDefaultSorter by="email">Total Orders</mfDefaultSorter>
-              </th>
-              <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
-                    <mfDefaultSorter by="orderDate">Total Amount</mfDefaultSorter>
-              </th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr role="row" *ngFor="let item of mf.data">
-              <td class="sorting_1">{{item.promotionName}}</td>
-              <td>{{item.totalOrders}}</td>
-              <td>{{item.totalAmount | currency}}</td>
-          </tr>
-      </tbody>
-      <tfoot>
-            <tr>
-                <td colspan="12">
-                    <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
-                </td>
-            </tr>
-       </tfoot> 
-  </table>
+
+        <table *ngIf="promotionSummaryData"  [mfData]="promotionSummaryData" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+            <thead>
+                <tr role="row">
+                    <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 203px;">            
+                        <mfDefaultSorter by="orderNo">Promotion Name</mfDefaultSorter>
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 302px;">
+                          <mfDefaultSorter by="email">Total Orders</mfDefaultSorter>
+                    </th>
+                    <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
+                          <mfDefaultSorter by="orderDate">Total Amount</mfDefaultSorter>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr role="row" *ngFor="let item of mf.data">
+                    <td class="sorting_1">{{item.promotionName}}</td>
+                    <td>{{item.totalOrders}}</td>
+                    <td>{{item.totalAmount | currency}}</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                  <tr>
+                      <td colspan="12">
+                          <mfBootstrapPaginator [rowsOnPageSet]="[5,10,25]"></mfBootstrapPaginator>
+                      </td>
+                  </tr>
+             </tfoot> 
+        </table>
+    </div>
+</div>
