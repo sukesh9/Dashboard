@@ -82,17 +82,13 @@
                                               overflow: auto;
                                               background-color: transparent;
                                             ">
-                                            <div class="jvectormap-container col-md-3" style="background-color: rgb(255, 255, 255);">
-                                                <fusioncharts
-                                                    [width]="810"
-                                                    [height]="450"
-                                                    [type]="type"
-                                                    dataFormat="json"
-                                                    [dataSource]="chartData"
-                                                ></fusioncharts>
-                                                <div class="jvectormap-legend-cnt jvectormap-legend-cnt-h"></div>
-                                                <div class="jvectormap-legend-cnt jvectormap-legend-cnt-v"></div>
-                                            </div>
+                                            <app-charts 
+                                                [width]="810"
+                                                [height]="450"
+                                                [type]="type"
+                                                [dataFormat]="json"
+                                                [data]="chartData">
+                                            </app-charts>
                                         </div>
                                     </div>
                                 </div>

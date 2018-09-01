@@ -40,6 +40,7 @@ import { BillingSummaryComponent } from './statements/billing-summary/billing-su
 import { BillingStatementsComponent } from './statements/billing-statements/billing-statements.component';
 import { MenuCategoriesComponent } from './menu/menu-categories/menu-categories.component';
 import { PromotionsComponent } from './menu/promotions/promotions.component';
+import { ChartsComponent } from './utils/charts/charts.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -68,7 +69,8 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     BillingSummaryComponent,
     BillingStatementsComponent,
     MenuCategoriesComponent,
-    PromotionsComponent
+    PromotionsComponent,
+    ChartsComponent
   ],
   imports: [
     NgbModule.forRoot(),
