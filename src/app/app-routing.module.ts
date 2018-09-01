@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component'
 import { OrdersComponent } from './orders/orders.component'
 import { MenuComponent } from './menu/menu.component';
+import { MenuCategoriesComponent } from './menu/menu-categories/menu-categories.component'
+import { PromotionsComponent } from './menu/promotions/promotions.component'
 import { BusinessHoursComponent } from './business-hours/business-hours.component';
 import { SettingsComponent } from './settings/settings.component'
 
@@ -20,6 +22,8 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'orders', component: OrdersComponent },
   { path: 'menu', component: MenuComponent },
+      { path: 'menuCategories', component: MenuCategoriesComponent },
+      { path: 'promotions', component: PromotionsComponent },
   { path: 'businessHours', component: BusinessHoursComponent },
   { path: 'settings', component: SettingsComponent },
   { path: 'reports', component: ReportsComponent },

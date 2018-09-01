@@ -35,3 +35,12 @@
 .mb-20{
     margin-bottom: 20px;
 }
+
+.wd-none{
+    width: 45% !important;
+}
+
+.hours-div{
+    /* border: 5px solid lightgray; */
+    padding: 3px;
+}

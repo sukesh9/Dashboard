@@ -15,48 +15,36 @@
                 </div>
               <h4 class="c-grey-900 mB-20">Orders</h4>
               <div id="dataTable_wrapper" class="dataTables_wrapper">
-                  <table *ngIf="ordersData"  [mfData]="ordersData.data" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
+                  <table *ngIf="menuCategoriesData"  [mfData]="menuCategoriesData" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">
                       <thead>
                           <tr role="row">
                               <th class="sorting_asc" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 203px;">            
-                                  <mfDefaultSorter by="orderNo">Order</mfDefaultSorter>
+                                  <mfDefaultSorter by="orderNo">Title</mfDefaultSorter>
                               </th>
                               <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Position: activate to sort column ascending" style="width: 302px;">
-                                    <mfDefaultSorter by="email">Email</mfDefaultSorter>
+                                    <mfDefaultSorter by="email">Description</mfDefaultSorter>
                               </th>
                               <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
-                                    <mfDefaultSorter by="orderDate">Order Date</mfDefaultSorter>
+                                    <mfDefaultSorter by="orderDate">Type</mfDefaultSorter>
                               </th>
                               <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 58px;">
-                                    <mfDefaultSorter by="subTotalAmount">Sub-Total Amount</mfDefaultSorter>
+                                    <mfDefaultSorter by="subTotalAmount">Active</mfDefaultSorter>
                               </th>
                               <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 133px;">
-                                    <mfDefaultSorter by="deliveryAmount">Delivery Amount</mfDefaultSorter>
-                              </th>
-                              <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Office: activate to sort column ascending" style="width: 153px;">
-                                    <mfDefaultSorter by="taxAmount">Tax Amount</mfDefaultSorter>
-                              </th>
-                              <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending" style="width: 58px;">
-                                    <mfDefaultSorter by="totalAmount">Total Amount</mfDefaultSorter>
+                                    <mfDefaultSorter by="deliveryAmount">Order</mfDefaultSorter>
                               </th>
                               <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Start date: activate to sort column ascending" style="width: 133px;">
-                                    <mfDefaultSorter by="creditCardPayment">Credit Card Payment</mfDefaultSorter>
-                              </th>
-                              <th class="sorting" tabindex="0" aria-controls="dataTable" rowspan="1" colspan="1" aria-label="Salary: activate to sort column ascending" style="width: 126px;">
-                                    <mfDefaultSorter>Options</mfDefaultSorter>
-                              </th>
+                                <mfDefaultSorter by="deliveryAmount">Options</mfDefaultSorter>
+                          </th>
                           </tr>
                       </thead>
                       <tbody>
                           <tr role="row" *ngFor="let item of mf.data">
-                              <td class="sorting_1">{{item.orderNo}}</td>
-                              <td>{{item.email}}</td>
-                              <td>{{item.orderDate}}</td>
-                              <td>{{item.subTotalAmount}}</td>
-                              <td>{{item.deliveryAmount}}</td>
-                              <td>{{item.taxAmount}}</td>
-                              <td>{{item.totalAmount}}</td>
-                              <td>{{item.creditCardPayment}}</td>
+                              <td class="sorting_1">{{item.title}}</td>
+                              <td>{{item.description}}</td>
+                              <td>{{item.type}}</td>
+                              <td>{{item.active}}</td>
+                              <td>{{item.order}}</td>
                               <td><i-star></i-star></td>
                           </tr>
                       </tbody>

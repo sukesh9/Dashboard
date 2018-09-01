@@ -313,6 +313,62 @@ export const CateringMenuData = {
             "availability" : "yes",
             "price": "9"
         },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
+            "id": "2",
+            "title" : "Lamb Biryani",
+            "category" : "Biryanis",
+            "description": "This is a test description This is a test description This is a test description",
+            "availability" : "yes",
+            "price": "9"
+        },{
             "id": "3",
             "title" : "Fish Biryani",
             "category" : "Biryanis",
@@ -401,6 +457,95 @@ export const FullMenuData = {
   
 export const MenuTypes = {
     data : ["Catering Menu", "Full Menu", "Breakfast Menu", "Lunch Menu"]
+}
+
+export const MenuCategories = {
+    data : [
+        {
+            "id": "1",
+            "title" : "Biryanis",
+            "type" : "Full Menu",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active",
+            "order": "9"
+        },{
+            "id": "1",
+            "title" : "Biryanis",
+            "type" : "Full Menu",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active",
+            "order": "9"
+        },{
+            "id": "1",
+            "title" : "Biryanis",
+            "type" : "Full Menu",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active",
+            "order": "9"
+        },{
+            "id": "1",
+            "title" : "Biryanis",
+            "type" : "Full Menu",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active",
+            "order": "9"
+        },{
+            "id": "1",
+            "title" : "Biryanis",
+            "type" : "Full Menu",
+            "description": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active",
+            "order": "9"
+        }
+    ]
+}
+
+export const Promotions = {
+    data: [
+        {
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        },{
+            "code": "1",
+            "discount" : "Biryanis",
+            "type" : "Full Menu",
+            "totalAmount": "This is a test description This is a test description This is a test descriptionThis is a test description This is a test descriptionThis is a test description This is a test description",
+            "active" : "active"
+        }
+    ]
 }
 
 export const Profile = {

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Output, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
@@ -15,9 +15,16 @@ export class DashboardService {
   
   private appUrl: string = 'api/';  // URL to web api
 
-  constructor(
-    private http: HttpClient) { }
+  public menuItemsCategory: any;
+  public menuSelectedGroup: string;
 
+  @Output() groupChanged = new EventEmitter<any>();
+
+
+  constructor(private http: HttpClient) { }
+
+
+  
     getHome (): Observable<any> {
       let URL = (this.appUrl + 'home').toString();
       return this.http.get<any>(URL)
@@ -79,6 +86,23 @@ export class DashboardService {
 
   getMenuTypes (): Observable<any> {
     let URL = (this.appUrl + 'menu/menuTypes').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get menu Types', []))
+        );
+  }
+
+  getMenuCategoriesData (): Observable<any> {
+    let URL = (this.appUrl + 'menu/menuCategories').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get menu Types', []))
+        );
+  }
+  getPromotionsData (): Observable<any> {
+    let URL = (this.appUrl + 'menu/promotions').toString();
 
     return this.http.get<any>(URL)
         .pipe(

@@ -299,3 +299,9 @@ ngb-timepicker .chevron{
   border-radius: 5px;
 }
 
+.menu-collapse{
+  border: none;
+  padding: 0px;
+  margin-left: 50px;
+}
+

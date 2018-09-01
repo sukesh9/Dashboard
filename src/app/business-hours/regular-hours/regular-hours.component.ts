@@ -21,11 +21,13 @@ export class RegularHoursComponent implements OnInit {
   private locale = 'en'; // or whatever you want...
   private  hours = [];
   
+  addHours: boolean;
   
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.addHours = false;
     this.time = {hour: 13, minute: 30};
     this.weekDaysList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     this.getMenuTypes();

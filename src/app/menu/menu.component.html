@@ -1,4 +1,4 @@
-<div class="container-fluid bgc-white pd-10">
+<div class="container-fluid bgc-white pd-10 custom-page">
         <div class="pd-10 mg-20 pd-l-15">
     <nav class="ml-185">
       <div class="dropdown w-200 pos-a">
@@ -12,7 +12,7 @@
             </div>
     
     </div>
-    <div class="dropdown w-200 ml-300 pos-a"  *ngIf="menuData">
+    <!-- <div class="dropdown w-200 ml-300 pos-a"  *ngIf="menuData">
         <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Categories
           </button>
@@ -21,7 +21,7 @@
                   <a class="dropdown-item" (click)="scroll(group.key)">{{group.key}}</a>
               </div>
           </div>
-    </div>
+    </div> -->
     <div class="dropdown w-200 ml-600">
       <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
          Add
@@ -64,18 +64,18 @@
           </div> style="position: fixed; overflow: auto; height: 600px;"
       </h6> class="btn-group" role="group" aria-label="Button group with nested dropdown"
     </div> -->
-    <div *ngIf="menuData" class="row">
-        <div class="btn-group-vertical col-lg-2" role="group" style="height: -webkit-fill-available; border-right: 1px solid lightgray" >
+    <div *ngIf="menuData">
+        <!-- <div class="btn-group-vertical col-lg-2" role="group" style=" border-right: 10px solid lightgray" >
             <div *ngFor="let group of menuData | groupBy : 'category'" style="width:100%;    margin-bottom: 11px;">
                     <button type="button" style="background: none;" class="btn" (click)="groupSelected(group.key)"><div id="{{group.key}}"><h3>{{group.key}}</h3></div></button><br/>
             </div>
-        </div>
+        </div> -->
     
-        <div  class="col-lg-10" >
+        <div >
         <div >
             <div>
                     <div class="row">
-                            <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of selectedGroupData">
+                            <div class=" col-lg-3  mg-bt-20"  *ngFor="let item of selectedCategorymenuItems">
                                     <div class="card  light">
                                         <h5 class="card-header menu-card-header">{{item.title}}  <span style="float:right; color: grey">{{item.price | currency}}</span></h5>
                                         <div class="card-body menu-card-body">
