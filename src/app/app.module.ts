@@ -24,7 +24,7 @@ import { DataTableModule } from "angular-6-datatable";
 import { MenuComponent } from './menu/menu.component';
 import { GroupByPipe } from './utils/group-by.pipe';
 import { BusinessHoursComponent } from './business-hours/business-hours.component';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SettingsComponent } from './settings/settings.component';
 import { ProfileComponent } from './settings/profile/profile.component';
 import { OperationsComponent } from './settings/operations/operations.component';
@@ -41,6 +41,9 @@ import { BillingStatementsComponent } from './statements/billing-statements/bill
 import { MenuCategoriesComponent } from './menu/menu-categories/menu-categories.component';
 import { PromotionsComponent } from './menu/promotions/promotions.component';
 import { ChartsComponent } from './utils/charts/charts.component';
+import { ZipcodeAnalysisComponent } from './reports/zipcode-analysis/zipcode-analysis.component';
+import { CustomTableComponent } from './utils/custom-table/custom-table.component';
+import { DeliveryPolygonComponent } from './settings/delivery-polygon/delivery-polygon.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -70,7 +73,10 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     BillingStatementsComponent,
     MenuCategoriesComponent,
     PromotionsComponent,
-    ChartsComponent
+    ChartsComponent,
+    ZipcodeAnalysisComponent,
+    CustomTableComponent,
+    DeliveryPolygonComponent
   ],
   imports: [
     NgbModule.forRoot(),

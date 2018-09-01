@@ -145,6 +145,15 @@ export class DashboardService {
             catchError(this.handleError('get reports item summary ', []))
         );
   }
+
+  getZipcodeChartData (): Observable<any> {
+    let URL = (this.appUrl + 'reports/zipcodeAnalysis').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get reports item summary ', []))
+        );
+  }
   
   getBillingSummary (): Observable<any> {
     let URL = (this.appUrl + 'statements/billingSummary').toString();

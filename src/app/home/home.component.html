@@ -76,17 +76,16 @@
                                 <div class="layer w-100">
                                     <div id="world-map-marker">
 
-                                        <div id="vmap" style="
+                                        <div  id="vmap" style="
                                               height: 490px;
                                               position: relative;
                                               overflow: auto;
                                               background-color: transparent;
                                             ">
-                                            <app-charts 
+                                            <app-charts  *ngIf="chartData"
                                                 [width]="810"
                                                 [height]="450"
                                                 [type]="type"
-                                                [dataFormat]="json"
                                                 [data]="chartData">
                                             </app-charts>
                                         </div>

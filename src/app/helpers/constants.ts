@@ -87,24 +87,8 @@ export const OrdersTableData = {
 };
   
 export const SalesChartData = {
-    "chart": {
-        "caption": "Restaurant Data",
-        "numberprefix": "$",
-        "theme": "fint",
-        "numDivLines": "5",
-        "numDivLineDashed": "0",
-        "numVDivLines": "5",
-        "vDivLineColor": "lightgrey",
-        "vDivLineThickness": "1",
-        "vDivLineAlpha": "70",
-        "vDivLineDashed": "0",
-        "vDivLineDashLen": "5",
-        "vDivLineDashGap": "3",
-        "showAlternateVGridColor": "1" 
-        
-
-    },
-    "data": [
+    
+    data: [
         {
             "label": "Monday",
             "value": "330000"
@@ -129,23 +113,8 @@ export const SalesChartData = {
 }
 
 export const OrdersChartData = {
-    "chart": {
-        "caption": "Restaurant Data",
-        "numberprefix": "$",
-        "theme": "fint",
-        "numDivLines": "5",
-        "numDivLineDashed": "0",
-        "numVDivLines": "5",
-        "vDivLineColor": "lightgrey",
-        "vDivLineThickness": "1",
-        "vDivLineAlpha": "70",
-        "vDivLineDashed": "0",
-        "vDivLineDashLen": "5",
-        "vDivLineDashGap": "3",
-        "showAlternateVGridColor": "1" 
 
-    },
-    "data": [
+    data: [
         {
             "label": "Monday",
             "value": "880000"
@@ -169,6 +138,30 @@ export const OrdersChartData = {
     ]
 }
 
+export const ZipcodeAnalysis = {
+    data: [
+        {
+            "label": "Monday",
+            "value": "330000"
+        },
+        {
+            "label": "Tuesday",
+            "value": "730000"
+        },
+        {
+            "label": "Wednesday",
+            "value": "590000"
+        },
+        {
+            "label": "thursday",
+            "value": "730000"
+        },
+        {
+            "label": "Friday",
+            "value": "330000"
+        }
+    ]
+}
 
 export const HomeData ={
     "totalOrders" : "-200",

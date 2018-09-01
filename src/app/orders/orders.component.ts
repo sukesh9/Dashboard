@@ -11,9 +11,13 @@ export class OrdersComponent implements OnInit {
 
   ordersData : any;
 
+  orderTypeList: Array<string>;
+  orderType: string;
+
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.orderTypeList = ["All", "Processed", "Cancelled"]
     this.getOrders();
   }
 

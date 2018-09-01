@@ -305,3 +305,8 @@ ngb-timepicker .chevron{
   margin-left: 50px;
 }
 
+.custom-page{
+  height: -webkit-fill-available;
+
+}
+
