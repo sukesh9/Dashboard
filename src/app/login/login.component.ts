@@ -62,16 +62,11 @@ export class LoginComponent implements OnInit {
                 },
                 error => {
                     //this.alertService.error(error);
+                    alert("Id and password incorrect")
                     this.loading = false;
                 });
 
     
     }
 
-    nav(){
-      // this.returnUrl = this.route.snapshot.queryParams['mainApp'] || '/';
-      // this.router.navigate([this.returnUrl]);
-      this.logged.emit();
-
-    }
 }

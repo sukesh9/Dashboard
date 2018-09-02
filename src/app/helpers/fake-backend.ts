@@ -22,7 +22,10 @@ export class FakeBackendInterceptor implements HttpInterceptor {
         // let loginUser = JSON.parse(localStorage.getItem('user')) || "";
 
         let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
-        users.push(user);
+        if(users.length == 0){
+            users.push(user);
+        }
+        
                 localStorage.setItem('users', JSON.stringify(users));
         // array in local storage for registered users
         //let users: any[] = JSON.parse(localStorage.getItem('users')) || [];
@@ -33,7 +36,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
             if (request.url.endsWith('/users/authenticate') && request.method === 'POST') {
                 // find if any user matches login credentials
                 let filteredUsers = users.filter(user => {
-                    return user.username === "demo" && user.password === "demo";
+                    return  user.username === request.body.username && user.password === request.body.password;
                 });
 
                 if (filteredUsers.length) {
