@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './_guards/auth.guard';
 
 import { HomeComponent } from './home/home.component'
 import { OrdersComponent } from './orders/orders.component'
@@ -24,8 +25,8 @@ import { ProfileComponent } from './settings/profile/profile.component';
 
 
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: HomeComponent},
   { path: 'orders', component: OrdersComponent },
   { path: 'menu', component: MenuComponent },
       { path: 'menuCategories', component: MenuCategoriesComponent },
@@ -40,7 +41,9 @@ const routes: Routes = [
       { path: 'reports/promotionSummary', component: PromotionSummaryComponent },
       { path: 'reports/customerSummary', component: CustomerSummaryComponent },
       { path: 'reports/zipcodeAnalysis', component: ZipcodeAnalysisComponent },
-  { path: 'statements', component: StatementsComponent }
+  { path: 'statements', component: StatementsComponent },
+
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

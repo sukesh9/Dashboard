@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS }    from '@angular/common/http';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -44,6 +44,9 @@ import { ChartsComponent } from './utils/charts/charts.component';
 import { ZipcodeAnalysisComponent } from './reports/zipcode-analysis/zipcode-analysis.component';
 import { CustomTableComponent } from './utils/custom-table/custom-table.component';
 import { DeliveryPolygonComponent } from './settings/delivery-polygon/delivery-polygon.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MainAppComponent } from './main-app/main-app.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -76,12 +79,16 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     ChartsComponent,
     ZipcodeAnalysisComponent,
     CustomTableComponent,
-    DeliveryPolygonComponent
+    DeliveryPolygonComponent,
+    LoginComponent,
+    RegisterComponent,
+    MainAppComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     AppRoutingModule,
     IconsModule,
