@@ -3,7 +3,7 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { HomeData, OrdersTableData, SalesChartData, OrdersChartData, FullMenuData, CateringMenuData, MenuTypes, Profile, ItemSummary,
-         PromotionSummary, CustomerSummary, BillingSummary, BillingStatements, MenuCategories, Promotions,ZipcodeAnalysis
+         PromotionSummary, CustomerSummary, BillingSummary, BillingStatements, MenuCategories, Promotions,ZipcodeAnalysis, RegularHoursData
         } from './constants'
 
 @Injectable()
@@ -100,6 +100,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 
             if (request.url.endsWith('/chart/Sales') && request.method === 'GET') {
                 let data = SalesChartData;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
+            if (request.url.endsWith('/businessHours/regularHours') && request.method === 'GET') {
+                let data = RegularHoursData;
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }

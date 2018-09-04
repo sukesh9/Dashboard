@@ -254,6 +254,89 @@ export const HomeData ={
     ]
 };
 
+export const RegularHoursData = {
+    data: [
+        {
+            "day" : "Monday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Tuesday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Wednesday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Thursday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Friday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Saturday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        },{
+            "day" : "Sunday",
+            "sessions" : [
+                {
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                },{
+                    from: "4:00 AM",
+                    to: "5:00 AM"
+                }
+            ]
+        }
+    ]
+}
+
 export const CateringMenuData = {
     "data" : [
         {

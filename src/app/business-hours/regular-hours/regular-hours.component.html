@@ -1,48 +1,53 @@
-
-<div class="container-fluid bgc-white pd-10">
-  <div class="pd-10 mg-20">
-      <div class="dropdown w-200 mb-20">
-          <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{(menuType != null)? menuType : "Menu Type"}}
+<div class="container-fluid bgc-white pd-10" *ngIf="regularHoursData">
+    <div class="pd-10 mg-20">
+        <div class="dropdown w-200 mb-20">
+            <button class="btn btn-secondary dropdown-toggle" style="width: 160px !important" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{(menuType != null)? menuType : "Menu Type"}}
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <div  *ngFor="let item of menuTypes">
+                <div *ngFor="let item of menuTypes">
                     <a class="dropdown-item" (click)="onMenuTypeChange(item)">{{item}}</a>
                 </div>
             </div>
-        
-        </div>
-        <div *ngFor="let weekDay of weekDaysList">
-          <div class="row days-list">
-              <p class="col-md-3 as-c fw-600 fs-16 week-day">{{weekDay}}</p>
-                <select  class="custom-select as-c col-md-2">                   
-                    <option *ngFor="let item of hours">{{item}}</option>
-                 </select>
-             <span class="as-c span-h"> - </span>
-             <select class="custom-select as-c  col-md-2">                   
-                    <option *ngFor="let item of hours">{{item}}</option>
-             </select>
 
-              <!-- <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-2"></ngb-timepicker><span class="as-c span-h"> - </span>
-              <ngb-timepicker [(ngModel)]="time" class="business-hours col-md-4"></ngb-timepicker> -->
-              <div class="col-md-2 as-c fw-500 fl-r">
-                <input type="checkbox"> <span class="cl-g"> Closed for the day?</span>
-              </div><br/>
-                          <!--additional Hours -->
-            <div class="row" *ngIf="addHours">
-                  <select  class="custom-select as-c col-md-2">                   
-                      <option *ngFor="let item of hours">{{item}}</option>
-                   </select>
-               <span class="as-c span-h"> - </span>
-               <select class="custom-select as-c  col-md-2">                   
-                      <option *ngFor="let item of hours">{{item}}</option>
-               </select>
-              </div>
-              <div>
-                <a (click)="addHours = !addHours">Add Additional Hours</a>
-              </div>
         </div>
+        <div *ngFor="let weekDay of regularHoursData" class=" days-list">
+            <div class="row">
+                <p class="col-md-3 as-c fw-600 fs-16 week-day">{{weekDay.day}}</p>
+                <select class="custom-select as-c col-md-2" [(ngModel)]="weekDay.sessions[0].from" >
+                    <option *ngFor="let item of timeList">{{item}}</option>
+                </select>
+                <span class="as-c span-h"> - </span>
+                <select class="custom-select as-c  col-md-2"  [(ngModel)]="weekDay.sessions[0].to">
+                    <option *ngFor="let item of timeList">{{item}}</option>
+                </select>
+                <div class="col-md-2 as-c fw-500 fl-r">
+                    <input type="checkbox"> <span class="cl-g"> Closed for the day?</span>
+                </div>
+                <br/>
+                <div class="col-md-5">
+                </div>
             </div>
 
-  </div>
-</div> 
+            <div class="row">
+                <p class="col-md-3 as-c fw-600 fs-16 week-day"></p>
+                <select class="custom-select as-c col-md-2"  [(ngModel)]="weekDay.sessions[1].from">
+                    <option *ngFor="let item of timeList">{{item}}</option>
+                </select>
+                <span class="as-c span-h"> - </span>
+                <select class="custom-select as-c  col-md-2"  [(ngModel)]="weekDay.sessions[0].to">
+                    <option *ngFor="let item of timeList">{{item}}</option>
+                </select>
+
+                <div class="col-md-2 as-c fw-500 fl-r">
+                </div>
+                <br/>
+                <div class="col-md-5">
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

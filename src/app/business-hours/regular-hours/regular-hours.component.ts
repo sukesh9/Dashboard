@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RegularHoursModel, Session} from './hours.model'
 import { DashboardService } from '../../dashboard.service';
 import * as moment from 'moment';
 
@@ -10,30 +11,33 @@ import * as moment from 'moment';
   styleUrls: ['./regular-hours.component.css']
 })
 export class RegularHoursComponent implements OnInit {
-  private time: any;
-  private weekDaysList: Array<string>;
+
 
   private menuTypes: Array<string>;         // Dropdown variable
   private menuType: string;                  // Change view according to the selected menu type from dropdown
 
-  private fromDate: Date;
+  private  timeList = [];
 
-  private locale = 'en'; // or whatever you want...
-  private  hours = [];
-  
-  addHours: boolean;
-  
+  private regularHoursData: any;
+    
 
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.addHours = false;
-    this.time = {hour: 13, minute: 30};
-    this.weekDaysList = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    this.getRegularHoursData();
     this.getMenuTypes();
     this.getHoursDropDown();
 
   }
+
+  getRegularHoursData(){
+    this.dashboardService.getRegularHoursData()
+    .subscribe(data => {
+        this.regularHoursData =  data.data;
+    }
+  );
+  }
+
   getMenuTypes () {
     let res = null;
     this.dashboardService.getMenuTypes()
@@ -46,8 +50,8 @@ export class RegularHoursComponent implements OnInit {
 
   getHoursDropDown(){
     for(let hour = 0; hour < 24; hour++) {
-      this.hours.push(moment({ hour }).format('h:mm A'));
-      this.hours.push(
+      this.timeList.push(moment({ hour }).format('h:mm A'));
+      this.timeList.push(
           moment({
               hour,
               minute: 30
@@ -61,8 +65,6 @@ export class RegularHoursComponent implements OnInit {
     //this.getMenu(type);
   }
 
-  fromDateChange(){
-    console.log(this.fromDate);
-  }
+
 
 }

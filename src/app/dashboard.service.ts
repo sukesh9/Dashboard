@@ -75,6 +75,16 @@ export class DashboardService {
         );
   }
 
+  getRegularHoursData (): Observable<any> {
+   // let URL =  `${(this.appUrl + 'businessHours/regularHours').toString()}/${menuType}`;
+   let URL = (this.appUrl + 'businessHours/regularHours').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get menu', []))
+        );
+  }
+
   getMenu (menuType: string): Observable<any> {
     let URL =  `${(this.appUrl + 'menu').toString()}/${menuType}`;
 
