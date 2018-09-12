@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../dashboard.service';
+import { Search } from '../search/search.model';
 
 
 @Component({
@@ -23,10 +24,11 @@ export class OrdersComponent implements OnInit {
 
   onSearch(searchObj){
     console.log("Orders", searchObj);
+    this.getOrders(searchObj);
   }
 
-  getOrders () {
-    this.dashboardService.getOrders()
+  getOrders (search?: Search) {
+    this.dashboardService.getOrders(search)
       .subscribe(data => {
         this.ordersData = data;
         console.log(this.ordersData);

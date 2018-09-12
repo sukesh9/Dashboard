@@ -43,8 +43,6 @@ export class SearchComponent implements OnInit {
 
   fromDateChange(e: any){
     this.searchObj.from = e.year; 
-    console.log(this.searchObj)
-    console.log(e)
   }
 
   toDateChange(e: any){

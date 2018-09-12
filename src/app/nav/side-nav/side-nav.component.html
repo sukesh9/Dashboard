@@ -1,5 +1,5 @@
 <nav class="col-md-2 d-none d-md-block bg-white sidebar fs-17">
-    <div class="sidebar-sticky"  *ngIf="!(dashboardService.menuItemsCategory)" >
+    <div class="sidebar-sticky">
       <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link" [ngClass]="{'active': (isActive == 'Dashboard')}" (click)="(isActive = 'Dashboard')" routerLink="/home">
@@ -31,48 +31,48 @@
             Menu
           </a> -->
           <a class="nav-link" [ngClass]="{'active': (isActive == 'Menu')}" data-toggle="collapse" href="#menuCollapse" role="button" aria-expanded="false" aria-controls="menuCollapse">
-              <i-bar-chart-2></i-bar-chart-2>
-              Menu
-            </a>
-          
-        </li>
+            <i-bar-chart-2></i-bar-chart-2>
+            Menu
+          </a>
+        
+      </li>
 
-        <div class="collapse" id="menuCollapse">
-            <div class="card card-body menu-collapse">
-                <ul class="nav flex-column">
+      <div class="collapse" id="menuCollapse">
+          <div class="card card-body menu-collapse">
+              <ul class="nav flex-column">
 
-                    <li class="nav-item">
-                        <a class="nav-link  clr-gray"  routerLink="/menuCategories">
-                            Categories
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  clr-gray"  routerLink="/menu">
-                            Menu
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link  clr-gray"  routerLink="/promotions">
-                          Promotions
+                  <li class="nav-item">
+                      <a class="nav-link  clr-gray"  routerLink="/menuCategories">
+                          Categories
                       </a>
                   </li>
-             
-                  </ul>              </div>
-          </div>
+                  <li class="nav-item">
+                      <a class="nav-link  clr-gray"  routerLink="/menu">
+                          Menu
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link  clr-gray"  routerLink="/promotions">
+                        Promotions
+                    </a>
+                </li>
+           
+                </ul>              </div>
+        </div>
 <!-- 
-        <div class="collapse show" id="collapseExample"   *ngIf="(dashboardService.menuItemsCategory)">
+      <div class="collapse show" id="collapseExample"   *ngIf="(dashboardService.menuItemsCategory)">
+        <div>
           <div>
-            <div>
-              <ul class="nav flex-column">
-                <li *ngFor="let item of this.dashboardService.menuItemsCategory" class="nav-item"><button type="button" style="background: none;" class="btn" (click)="selectedGroupChanged(item.key)">{{item.key}}</button></li>
-              </ul>
-            </div>
+            <ul class="nav flex-column">
+              <li *ngFor="let item of this.dashboardService.menuItemsCategory" class="nav-item"><button type="button" style="background: none;" class="btn" (click)="selectedGroupChanged(item.key)">{{item.key}}</button></li>
+            </ul>
           </div>
-        </div> -->
+        </div>
+      </div> -->
 
 
 
-        <li class="nav-item">
+      <li class="nav-item">
           <a class="nav-link"  [ngClass]="{'active': (isActive == 'Business Hours')}" (click)="(isActive = 'Business Hours')" routerLink="/businessHours">
               <i-users></i-users>
             Business Hours
@@ -113,34 +113,4 @@
       </ul>
     </div>
 
-    <div class="sidebar-sticky"    *ngIf="(dashboardService.menuItemsCategory)">
-          <!-- <button class="btn btn-secondary nav-item" (click)="dashboardService.menuItemsCategory = null">Back</button> -->
-          <!-- <a class="nav-link" (click)="dashboardService.menuItemsCategory = null">
-            <i-arrow-left></i-arrow-left>Menu
-        </a> -->
-        <ul class="nav flex-column">
-
-            <li class="nav-item">
-                <a class="nav-link  clr-gray"  routerLink="/home">
-                    <i-arrow-left></i-arrow-left>HOME
-                </a>
-            </li>
-            <!-- <li *ngFor="let item of this.dashboardService.menuItemsCategory" class="nav-item">
-              <button type="button" style="background: none;" class="nav-link" 
-              (click)="selectedGroupChanged(item.key)">{{item.key}}</button></li> -->
-          </ul>
-        <!-- <h3 class="nav-item" >Menu</h3> -->
-      <ul class="nav flex-column">
-        <h3>Menu</h3>
-        <li class="nav-item" *ngFor="let item of this.dashboardService.menuItemsCategory" >
-          <a class="nav-link clr-gray" (click)="selectedGroupChanged(item.key)">
-              {{item.key}}
-          </a>
-        </li>
-        <!-- <li *ngFor="let item of this.dashboardService.menuItemsCategory" class="nav-item">
-          <button type="button" style="background: none;" class="nav-link" 
-          (click)="selectedGroupChanged(item.key)">{{item.key}}</button></li> -->
-      </ul>
-    </div>
   </nav>
-

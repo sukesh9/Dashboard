@@ -1,11 +1,11 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, SimpleChange, SimpleChanges, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-charts',
   templateUrl: './charts.component.html',
   styleUrls: ['./charts.component.css']
 })
-export class ChartsComponent implements OnInit {
+export class ChartsComponent implements  OnInit,OnChanges {
 
   constructor() { }
 
@@ -14,14 +14,10 @@ export class ChartsComponent implements OnInit {
   @Input() width: any;
   @Input() type: any;
 
-  chartData: any;
+  @Input() chartData: any;
 
-  ngOnInit() {
-    this.initChartData();
-  }
 
-  initChartData(){
-    this.chartData = {
+  private _chartData: any = {
       "chart": {
         "caption": "Restaurant Data",
         "numberprefix": "$",
@@ -38,11 +34,35 @@ export class ChartsComponent implements OnInit {
         "showAlternateVGridColor": "1"      
     }, 
     data: null
-    }
+    };
+
+  // get chartData(): string {
+  //   return this._chartData;
+  // }
+
+  // @Input()
+  // set chartData(chartData: string) {
+  //   console.log('prev value: ', this._chartData);
+  //   console.log('got name: ', name);
+  //   this._chartData.data = chartData;
+  // }
+  ngOnChanges(changes: SimpleChanges) {
+    const chartData: SimpleChange = changes.chartData;
+    console.log('prev value: ', chartData.previousValue);
+    console.log('got name: ', chartData.currentValue);
+    this._chartData.data = chartData.currentValue.data;
+  }
+
+  ngOnInit() {
+    console.log(this._chartData)
+    //this.initChartData();
+  }
+
+  initChartData(){
     if(this.data){
-      this.chartData.data = this.data.data;
+      this._chartData.data = this.data.data;
     }
-    console.log(this.chartData)
+    console.log(this._chartData)
   }
 
 }

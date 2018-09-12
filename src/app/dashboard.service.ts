@@ -1,13 +1,15 @@
 import { Injectable, Output, EventEmitter } from '@angular/core';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
+import { Search } from './search/search.model';
 
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
+
 
 @Injectable({ providedIn: 'root' })
 export class DashboardService {
@@ -15,10 +17,10 @@ export class DashboardService {
   
   private appUrl: string = 'api/';  // URL to web api
 
-  public menuItemsCategory: any;
-  public menuSelectedGroup: string;
+//   public menuItemsCategory: any;
+//   public menuSelectedGroup: string;
 
-  @Output() groupChanged = new EventEmitter<any>();
+//   @Output() groupChanged = new EventEmitter<any>();
 
 
   constructor(private http: HttpClient) { }
@@ -67,12 +69,29 @@ export class DashboardService {
     );
   }
 
-  getOrders (): Observable<any> {
+  getOrders (search?: Search): Observable<any> {
     let URL = (this.appUrl + 'orders').toString();
-    return this.http.get<any>(URL)
-        .pipe(
-            catchError(this.handleError('get orders', []))
-        );
+    let searchParameters = null;
+
+    if(search){
+     searchParameters = new HttpParams({
+            fromObject: {from: search.from, to:search.to, searchString: search.searchString}
+        });
+        
+    }
+
+
+      console.log(this.http.get<any>(URL, { params: searchParameters })
+      .pipe(
+          catchError(this.handleError('get orders', []))
+      ))
+
+      return this.http.get<any>(URL, { params: searchParameters })
+      .pipe(
+          catchError(this.handleError('get orders', []))
+      );
+
+
   }
 
   getRegularHoursData (): Observable<any> {

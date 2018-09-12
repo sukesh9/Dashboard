@@ -85,6 +85,30 @@ export const OrdersTableData = {
         }
     ]
 };
+
+export const OrdersTableData1 = {
+    data: [
+        {
+            "orderNo" : "1234398728",
+            "email": "99",
+            "orderDate": "January 5th",
+            "subTotalAmount": "99",
+            "deliveryAmount": "3",
+            "taxAmount": "2",
+            "totalAmount": "40",
+            "creditCardPayment": "yes",
+        },{
+            "orderNo" : "123420840923",
+            "email": "99",
+            "orderDate": "January 5th",
+            "subTotalAmount": "99",
+            "deliveryAmount": "3",
+            "taxAmount": "2",
+            "totalAmount": "40",
+            "creditCardPayment": "yes",
+        }
+    ]
+}
   
 export const SalesChartData = {
     

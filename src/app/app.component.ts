@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
-  isLoggedIn= false;
+  isLoggedIn= true;
 
   logged(){
     this.isLoggedIn =true;

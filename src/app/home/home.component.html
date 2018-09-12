@@ -82,12 +82,27 @@
                                               overflow: auto;
                                               background-color: transparent;
                                             ">
-                                            <app-charts  *ngIf="chartData"
+                                            <div class="jvectormap-container col-md-3" style="background-color: rgb(255, 255, 255);">
+                                                <app-charts  *ngIf="chartData"
                                                 [width]="810"
                                                 [height]="450"
                                                 [type]="type"
-                                                [data]="chartData">
+                                                [chartData]="chartData">
                                             </app-charts>
+                                                <div class="jvectormap-legend-cnt jvectormap-legend-cnt-h"></div>
+                                                <div class="jvectormap-legend-cnt jvectormap-legend-cnt-v"></div>
+                                              </div>
+                                           
+                                            <!-- <div class="jvectormap-container col-md-3" style="background-color: rgb(255, 255, 255);">
+
+                                            <fusioncharts  *ngIf="chartData"
+                                            [width]="810"
+                                            [height]="450"
+                                            type="column2d"
+                                            dataFormat="json"
+                                            [dataSource]="chartData"
+                                        ></fusioncharts>
+                                        </div> -->
                                         </div>
                                     </div>
                                 </div>

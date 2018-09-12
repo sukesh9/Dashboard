@@ -1,12 +1,3 @@
 .nav-item {
     height: 60px;
   }
-
-  .clr-gray{
-    color: gray !important;
-  }
-  .menu-collapse{
-    border: none;
-    padding: 0px;
-    margin-left: 50px;
-  }
