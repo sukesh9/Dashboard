@@ -1,14 +1,20 @@
 <div class="container-fluid bgc-white pd-10 custom-page">
+        <div class="pd-10 mg-20">
+                <nav class="navbar navbar-light bg-light mB-20 br-5">
+                        <h2 class="c-grey-900 fw-700"><span class="mr-20"><a routerLink="/reports"><button class="btn btn-secondary">&laquo; Back</button></a></span>Item Summary</h2>
+                    </nav>
+    
     <div class="pd-10 mg-20 pd-l-15">
         <div class="row">
             <div class="col-lg-6">
                 <app-charts *ngIf="zipcodeChartData"
                     [width]="600"
                     [height]="350"
-                    type="column2d"
-                    [data]="zipcodeChartData">
+                    type="column3d"
+                    [chartData]="zipcodeChartData">
                 </app-charts>
             </div>
+
             <div class="col-lg-1">
 
             </div>
@@ -81,8 +87,8 @@
                         <app-charts *ngIf="zipcodeChartData"
                             [width]="600"
                             [height]="350"
-                            type="pie2d"
-                            [data]="zipcodeChartData">
+                            type="pie3d"
+                            [chartData]="zipcodeChartData">
                         </app-charts>
                     </div>
             </div>

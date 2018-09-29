@@ -13,6 +13,8 @@ export class ZipcodeAnalysisComponent implements OnInit {
 
   zipcodeChartData: any;
 
+  type = "column2d";
+
   ngOnInit() {
     this.getZipcodeChartData();
   }
