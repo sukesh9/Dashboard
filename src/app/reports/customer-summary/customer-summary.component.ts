@@ -12,7 +12,7 @@ export class CustomerSummaryComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) { }
 
-  private customerSummaryData: CustomerSummary[];
+   customerSummaryData: CustomerSummary[];
 
   ngOnInit() {
     this.getCustomerSummaryData();

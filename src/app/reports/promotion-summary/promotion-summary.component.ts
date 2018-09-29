@@ -13,7 +13,7 @@ export class PromotionSummaryComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) { }
 
-  private promotionSummaryData: PromotionSummary[];
+   promotionSummaryData: PromotionSummary[];
 
   ngOnInit() {
     this.getPromotionSummaryData();

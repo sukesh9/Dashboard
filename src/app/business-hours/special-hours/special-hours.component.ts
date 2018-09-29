@@ -11,7 +11,7 @@ export class SpecialHoursComponent implements OnInit {
   constructor() { }
   public isCollapsed = false;
 
-  private  hours = [];
+    hours = [];
 
   ngOnInit() {
     this.getHoursDropDown();

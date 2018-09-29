@@ -9,7 +9,7 @@ import { DashboardService } from '../../dashboard.service';
 })
 export class ProfileComponent implements OnInit {
 
-  private profileData: any;
+   profileData: any;
 
   constructor(private dashboardService: DashboardService) { }
 

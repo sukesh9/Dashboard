@@ -17,7 +17,7 @@ export class ChartsComponent implements  OnInit,OnChanges {
   @Input() chartData: any;
 
 
-  private _chartData: any = {
+   _chartData: any = {
       "chart": {
         "caption": "Restaurant Data",
         "numberprefix": "$",

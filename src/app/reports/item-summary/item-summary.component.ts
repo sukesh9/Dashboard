@@ -12,7 +12,7 @@ export class ItemSummaryComponent implements OnInit {
 
   constructor(private dashboardService: DashboardService) { }
 
-  private itemSummaryData: ItemSummary[];
+   itemSummaryData: ItemSummary[];
 
   ngOnInit() {
     this.getItemSummaryData();

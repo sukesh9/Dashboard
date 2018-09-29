@@ -13,12 +13,12 @@ import * as moment from 'moment';
 export class RegularHoursComponent implements OnInit {
 
 
-  private menuTypes: Array<string>;         // Dropdown variable
-  private menuType: string;                  // Change view according to the selected menu type from dropdown
+   menuTypes: Array<string>;         // Dropdown variable
+   menuType: string;                  // Change view according to the selected menu type from dropdown
 
-  private  timeList = [];
+    timeList = [];
 
-  private regularHoursData: any;
+   regularHoursData: any;
     
 
   constructor(private dashboardService: DashboardService) { }

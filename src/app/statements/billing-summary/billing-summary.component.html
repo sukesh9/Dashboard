@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-12" style="padding-left: 0px !important">
             <div class="bgc-white bd bdrs-3 p-20 mB-20">
-                  <app-search #search (searched)="onSearch($event)"></app-search>
+                  <!-- <app-search #search (searched)="onSearch($event)"></app-search> -->
                 <h4 class="c-grey-900 mB-20">Summary</h4>
                 <div id="dataTable_wrapper" class="dataTables_wrapper">
                     <table *ngIf="billingSummaryData"  [mfData]="billingSummaryData" #mf="mfDataTable" [mfRowsOnPage]="10" id="dataTable" class="table table-striped table-bordered dataTable" cellspacing="0" width="100%" role="grid" aria-describedby="dataTable_info" style="width: 100%;">

@@ -10,17 +10,17 @@ import { DashboardService } from '../../dashboard.service';
 
 export class OperationsComponent implements OnInit {
 
-  private autoPrintReceipts: boolean;
+   autoPrintReceipts: boolean;
 
-  private defaultDeliveryEstimate: number;
-  private defaultPickupEstimate: number;
+   defaultDeliveryEstimate: number;
+   defaultPickupEstimate: number;
 
-  private autoPrintValue: number;
+   autoPrintValue: number;
   
-  private SelectedOrderConfirmation: string;
-  private orderConfirmationList: Array<string>;
+   SelectedOrderConfirmation: string;
+   orderConfirmationList: Array<string>;
 
-  private interval : number;
+   interval : number;
 
 
   constructor(private dashboardService: DashboardService) { 
