@@ -80,12 +80,6 @@ export class DashboardService {
         
     }
 
-
-      console.log(this.http.get<any>(URL, { params: searchParameters })
-      .pipe(
-          catchError(this.handleError('get orders', []))
-      ))
-
       return this.http.get<any>(URL, { params: searchParameters })
       .pipe(
           catchError(this.handleError('get orders', []))
@@ -127,7 +121,7 @@ export class DashboardService {
 
     return this.http.get<any>(URL)
         .pipe(
-            catchError(this.handleError('get menu Types', []))
+            catchError(this.handleError('get menu categories', []))
         );
   }
   getPromotionsData (): Observable<any> {
@@ -135,7 +129,16 @@ export class DashboardService {
 
     return this.http.get<any>(URL)
         .pipe(
-            catchError(this.handleError('get menu Types', []))
+            catchError(this.handleError('get menu promotions', []))
+        );
+  }
+
+  getModifiersData(){
+    let URL = (this.appUrl + 'menu/modifiers').toString();
+
+    return this.http.get<any>(URL)
+        .pipe(
+            catchError(this.handleError('get modifiers', []))
         );
   }
 
@@ -193,10 +196,16 @@ export class DashboardService {
         );
   }
 
-  getBillingStatements (): Observable<any> {
+  getBillingStatements (search? :Search): Observable<any> {
     let URL = (this.appUrl + 'statements/billingStatements').toString();
+    let searchParameters = null;
 
-    return this.http.get<any>(URL)
+    if(search){
+     searchParameters = new HttpParams({
+            fromObject: {from: search.from, to:search.to, searchString: search.searchString}
+        });
+    }
+    return this.http.get<any>(URL, { params: searchParameters })
         .pipe(
             catchError(this.handleError('get reports item summary ', []))
         );

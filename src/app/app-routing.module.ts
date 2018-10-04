@@ -22,6 +22,8 @@ import { ZipcodeAnalysisComponent } from './reports/zipcode-analysis/zipcode-ana
 import { OperationsComponent } from './settings/operations/operations.component';
 import { DeliveryPolygonComponent } from './settings/delivery-polygon/delivery-polygon.component';
 import { ProfileComponent } from './settings/profile/profile.component';
+import { ModifiersComponent } from './menu/modifiers/modifiers.component';
+import { AddModifiersComponent } from './menu/add-modifiers/add-modifiers.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,8 @@ const routes: Routes = [
   { path: 'menu', component: MenuComponent },
       { path: 'menuCategories', component: MenuCategoriesComponent },
       { path: 'promotions', component: PromotionsComponent },
+      { path: 'modifiers', component: ModifiersComponent },
+            { path: 'addModifiers', component: AddModifiersComponent },
   { path: 'businessHours', component: BusinessHoursComponent },
   { path: 'settings', component: SettingsComponent },
       { path: 'settings/operations', component: OperationsComponent },

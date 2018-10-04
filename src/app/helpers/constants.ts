@@ -600,6 +600,40 @@ export const MenuCategories = {
     ]
 }
 
+export const Modifiers = {
+    data : [
+        {
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        },{
+            addOn: "sweet",
+            internalName: "internal sweet",
+            items : ["biryani", "dosa"]
+        }
+    ]
+}
+
 export const Promotions = {
     data: [
         {

@@ -47,6 +47,8 @@ import { DeliveryPolygonComponent } from './settings/delivery-polygon/delivery-p
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MainAppComponent } from './main-app/main-app.component';
+import { ModifiersComponent } from './menu/modifiers/modifiers.component';
+import { AddModifiersComponent } from './menu/add-modifiers/add-modifiers.component';
 
 
 FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
@@ -82,7 +84,9 @@ FusionChartsModule.fcRoot(FusionCharts, Charts, FintTheme);
     DeliveryPolygonComponent,
     LoginComponent,
     RegisterComponent,
-    MainAppComponent
+    MainAppComponent,
+    ModifiersComponent,
+    AddModifiersComponent
   ],
   imports: [
     NgbModule.forRoot(),

@@ -17,13 +17,18 @@ export class BillingStatementsComponent implements OnInit {
     this.getBillingStatementsData();
   }
 
-  getBillingStatementsData () {
-    this.dashboardService.getBillingStatements()
+  getBillingStatementsData (searchObj?) {
+    this.dashboardService.getBillingStatements(searchObj)
       .subscribe(data => {
         this.billingStatementsData = data.data;
         console.log(this.billingStatementsData);
       }
     );
+  }
+  
+  onSearch(searchObj){
+    console.log("Orders", searchObj);
+    this.getBillingStatementsData(searchObj);
   }
 
 }

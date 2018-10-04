@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-12" style="padding-left: 0px !important">
+          <div class="bgc-white bd bdrs-3 p-20 mB-20">
+            <div class="col-md-6">
+                <li class="list-group-item list-group-item-secondary row li-bg as-c">
+                    <span class="col-md-4 mr-20">Add Modifier</span>
+                    <span class="col-md-4 fl-r"><a routerLink="/addModifiers"><i-plus-square></i-plus-square></a></span>
+                </li>
+                <ul class="list-group" *ngFor="let item of modifiersData">
+
+                    <li class="list-group-item list-group-item-secondary row li-bg as-c">
+                      <span class="col-md-4 mr-20">{{item.addOn}}</span>
+                      <span class="col-md-4">{{item.internalName}}</span>
+                      <span class="col-md-4 fl-r">{{item.items}}</span>
+      
+                    </li>
+      
+                  </ul>
+            </div>
+
+          </div>
+      </div>
+  </div>
+</div>

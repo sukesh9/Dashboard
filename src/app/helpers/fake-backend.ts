@@ -3,7 +3,8 @@ import { HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpInterceptor, HTT
 import { Observable, of, throwError } from 'rxjs';
 import { delay, mergeMap, materialize, dematerialize } from 'rxjs/operators';
 import { HomeData, OrdersTableData,OrdersTableData1, SalesChartData, OrdersChartData, FullMenuData, CateringMenuData, MenuTypes, Profile, ItemSummary,
-         PromotionSummary, CustomerSummary, BillingSummary, BillingStatements, MenuCategories, Promotions,ZipcodeAnalysis, RegularHoursData
+         PromotionSummary, CustomerSummary, BillingSummary, BillingStatements, MenuCategories, Promotions,ZipcodeAnalysis, RegularHoursData,
+         Modifiers
         } from './constants'
 
 @Injectable()
@@ -148,6 +149,12 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return of(new HttpResponse({ status: 200, body: data }));
             }
 
+            if (request.url.endsWith('menu/modifiers') && request.method === 'GET') {
+                let data = Modifiers;
+                
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
+
             if (request.url.endsWith('settings/profile') && request.method === 'GET') {
                 let data = Profile;
                 
@@ -177,13 +184,28 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }
+///////////////////
+            if ((request.url.endsWith('statements/billingSummary')) && !(request.urlWithParams.endsWith('statements/billingSummary')) && request.method === 'GET') {
+                
+                let data = BillingSummary;
 
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
             if (request.url.endsWith('statements/billingSummary') && request.method === 'GET') {
                 let data = BillingSummary;
                 
                 return of(new HttpResponse({ status: 200, body: data }));
             }
-            
+       /////////     
+       debugger;
+            if ((request.url.endsWith('statements/billingStatements')) && !(request.urlWithParams.endsWith('statements/billingStatements')) && request.method === 'GET') {
+               let testData = BillingStatements;
+               let objCopy = JSON.parse(JSON.stringify(BillingStatements));
+               objCopy.data.splice(3);
+                let data = objCopy;
+
+                return of(new HttpResponse({ status: 200, body: data }));
+            }
             if (request.url.endsWith('statements/billingStatements') && request.method === 'GET') {
                 let data = BillingStatements;
                 

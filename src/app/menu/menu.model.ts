@@ -7,3 +7,11 @@ export class MenuItem{
     price: string;
 
 }
+
+export class AddModifier{
+    title: string;
+    price: number;
+    avaliability: boolean;
+
+    constructor(){}
+}
