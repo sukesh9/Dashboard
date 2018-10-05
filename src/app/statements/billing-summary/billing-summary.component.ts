@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../dashboard.service';
+import { Search } from '../../search/search.model';
 
 
 @Component({
@@ -17,13 +18,19 @@ export class BillingSummaryComponent implements OnInit {
     this.getBillingSummaryData();
   }
 
-  getBillingSummaryData () {
-    this.dashboardService.getBillingSummary()
+  getBillingSummaryData (searchObj? : Search) {
+    this.dashboardService.getBillingSummary(searchObj)
       .subscribe(data => {
         this.billingSummaryData = data.data;
         console.log(this.billingSummaryData);
       }
     );
   }
+
+  onSearch(searchObj){
+    console.log("Orders", searchObj);
+    this.getBillingSummaryData(searchObj);
+  }
+
 
 }

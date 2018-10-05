@@ -17,15 +17,7 @@ export class DashboardService {
   
   private appUrl: string = 'api/';  // URL to web api
 
-//   public menuItemsCategory: any;
-//   public menuSelectedGroup: string;
-
-//   @Output() groupChanged = new EventEmitter<any>();
-
-
   constructor(private http: HttpClient) { }
-
-
   
     getHome (): Observable<any> {
       let URL = (this.appUrl + 'home').toString();
@@ -124,6 +116,13 @@ export class DashboardService {
             catchError(this.handleError('get menu categories', []))
         );
   }
+  addMenuCategory(body: any): Observable<any> {
+    let URL = (this.appUrl + 'menu/addCategory').toString();
+    return this.http.post<any>(URL, body, httpOptions).pipe(
+      tap(),
+      catchError(this.handleError<any>())
+    );
+  }
   getPromotionsData (): Observable<any> {
     let URL = (this.appUrl + 'menu/promotions').toString();
 
@@ -187,10 +186,16 @@ export class DashboardService {
         );
   }
   
-  getBillingSummary (): Observable<any> {
+  getBillingSummary (search? :Search): Observable<any> {
     let URL = (this.appUrl + 'statements/billingSummary').toString();
+    let searchParameters = null;
 
-    return this.http.get<any>(URL)
+    if(search){
+     searchParameters = new HttpParams({
+            fromObject: {from: search.from, to:search.to, searchString: search.searchString}
+        });
+    }
+    return this.http.get<any>(URL, { params: searchParameters })
         .pipe(
             catchError(this.handleError('get reports item summary ', []))
         );

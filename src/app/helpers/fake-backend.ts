@@ -187,9 +187,11 @@ export class FakeBackendInterceptor implements HttpInterceptor {
 ///////////////////
             if ((request.url.endsWith('statements/billingSummary')) && !(request.urlWithParams.endsWith('statements/billingSummary')) && request.method === 'GET') {
                 
-                let data = BillingSummary;
-
-                return of(new HttpResponse({ status: 200, body: data }));
+                let objCopy = JSON.parse(JSON.stringify(BillingSummary));
+                objCopy.data.splice(3);
+                 let data = objCopy;
+ 
+                 return of(new HttpResponse({ status: 200, body: data }));
             }
             if (request.url.endsWith('statements/billingSummary') && request.method === 'GET') {
                 let data = BillingSummary;
@@ -197,9 +199,7 @@ export class FakeBackendInterceptor implements HttpInterceptor {
                 return of(new HttpResponse({ status: 200, body: data }));
             }
        /////////     
-       debugger;
             if ((request.url.endsWith('statements/billingStatements')) && !(request.urlWithParams.endsWith('statements/billingStatements')) && request.method === 'GET') {
-               let testData = BillingStatements;
                let objCopy = JSON.parse(JSON.stringify(BillingStatements));
                objCopy.data.splice(3);
                 let data = objCopy;

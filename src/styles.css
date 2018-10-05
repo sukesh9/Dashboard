@@ -317,5 +317,9 @@ ngb-timepicker .chevron{
   width: 500px;
 }
 
+a.dropdown:hover{
+  background: burlywood;
+}
+
 
 }
